@@ -1,4 +1,4 @@
-import { Localized } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { trackListening } from '../../../../services/tracker';
@@ -24,17 +24,18 @@ import { PlayButton } from '../../../primary-buttons/primary-buttons';
 import Pill from '../pill';
 
 import './listen.css';
+import { ReportButton } from '../report/report';
 
 const VOTE_NO_PLAY_MS = 3000; // Threshold when to allow voting no
 
 const VoteButton = ({
-  type,
+  kind,
   ...props
-}: { type: 'yes' | 'no' } & React.ButtonHTMLAttributes<any>) => (
-  <button type="button" className={['vote-button', type].join(' ')} {...props}>
-    {type === 'yes' && <ThumbsUpIcon />}
-    {type === 'no' && <ThumbsDownIcon />}
-    <Localized id={'vote-' + type}>
+}: { kind: 'yes' | 'no' } & React.ButtonHTMLAttributes<any>) => (
+  <button type="button" className={['vote-button', kind].join(' ')} {...props}>
+    {kind === 'yes' && <ThumbsUpIcon />}
+    {kind === 'no' && <ThumbsDownIcon />}
+    <Localized id={'vote-' + kind}>
       <span />
     </Localized>
   </button>
@@ -91,6 +92,7 @@ class ListenPage extends React.Component<Props, State> {
 
   componentWillUnmount() {
     clearInterval(this.playedSomeInterval);
+    // this.audioPlayer.close();
   }
 
   private getClipIndex() {
@@ -129,15 +131,15 @@ class ListenPage extends React.Component<Props, State> {
     const { clips } = this.state;
     const clipIndex = this.getClipIndex();
 
-    clearInterval(this.playedSomeInterval);
+    this.stop();
     this.props.vote(isValid, this.state.clips[this.getClipIndex()].id);
     this.setState({
       hasPlayed: false,
       hasPlayedSome: false,
       isPlaying: false,
       isSubmitted: clipIndex === SET_COUNT - 1,
-      clips: clips.map(
-        (clip, i) => (i === clipIndex ? { ...clip, isValid } : clip)
+      clips: clips.map((clip, i) =>
+        i === clipIndex ? { ...clip, isValid } : clip
       ),
     });
   };
@@ -165,12 +167,13 @@ class ListenPage extends React.Component<Props, State> {
     this.stop();
     removeClip(clips[this.getClipIndex()].id);
     this.setState({
-      clips: clips.map(
-        (clip, i) =>
-          this.getClipIndex() === i
-            ? { ...this.props.clips.slice(SET_COUNT)[0], isValid: null }
-            : clip
+      clips: clips.map((clip, i) =>
+        this.getClipIndex() === i
+          ? { ...this.props.clips.slice(SET_COUNT)[0], isValid: null }
+          : clip
       ),
+      hasPlayed: false,
+      hasPlayedSome: false,
     });
   };
 
@@ -189,7 +192,7 @@ class ListenPage extends React.Component<Props, State> {
     return (
       <React.Fragment>
         <audio
-          {...activeClip && { src: activeClip.audioSrc }}
+          {...(activeClip && { src: activeClip.audioSrc })}
           preload="auto"
           onEnded={this.hasPlayed}
           ref={this.audioRef}
@@ -198,7 +201,7 @@ class ListenPage extends React.Component<Props, State> {
           activeIndex={clipIndex}
           errorContent={
             !this.props.isLoading &&
-            clips.length === 0 && (
+            (clips.length === 0 || !activeClip) && (
               <div className="empty-container">
                 <div className="error-card card-dimensions">
                   <Localized id="nothing-to-validate">
@@ -244,13 +247,13 @@ class ListenPage extends React.Component<Props, State> {
           primaryButtons={
             <React.Fragment>
               <VoteButton
-                type="yes"
+                kind="yes"
                 onClick={this.voteYes}
                 disabled={!hasPlayed}
               />
               <PlayButton isPlaying={isPlaying} onClick={this.play} />
               <VoteButton
-                type="no"
+                kind="no"
                 onClick={this.voteNo}
                 disabled={!hasPlayed && !hasPlayedSome}
               />
@@ -279,6 +282,15 @@ class ListenPage extends React.Component<Props, State> {
               );
             }
           )}
+          reportModalProps={{
+            reasons: [
+              'offensive-speech',
+              'grammar-or-spelling',
+              'different-language',
+            ],
+            kind: 'clip',
+            id: activeClip ? activeClip.id : null,
+          }}
           sentences={clips.map(clip => clip.sentence)}
           shortcuts={[
             {
@@ -318,7 +330,7 @@ const mapDispatchToProps = {
   vote: Clips.actions.vote,
 };
 
-export default connect<PropsFromState, PropsFromDispatch>(
+export default connect<PropsFromState, any>(
   mapStateToProps,
   mapDispatchToProps
 )(ListenPage);

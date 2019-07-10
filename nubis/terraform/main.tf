@@ -3,8 +3,13 @@ provider "aws" {
   version = "~> 1"
 }
 
+resource "aws_acm_certificate" "voice" {
+  domain_name       = "${var.service_name}.${var.environment == "prod" ? "mozilla" : "allizom" }.org"
+  validation_method = "EMAIL"
+}
+
 module "worker" {
-  source        = "github.com/nubisproject/nubis-terraform//worker?ref=v2.3.0"
+  source        = "github.com/gozer/nubis-terraform//worker?ref=v2.4.0"
   region        = "${var.region}"
   environment   = "${var.environment}"
   account       = "${var.account}"
@@ -12,9 +17,9 @@ module "worker" {
   purpose       = "webserver"
   ami           = "${var.ami}"
   elb           = "${module.load_balancer.name}"
-  min_instances = 3
+  min_instances = "${var.environment == "prod" ? 5 : 3}"
   max_instances = 30
-  instance_type = "t2.medium"
+  instance_type = "t2.large"
 
   # Wait up to 10 minutes for warming up (in seconds)
   health_check_grace_period = "600"
@@ -29,7 +34,7 @@ module "worker" {
 }
 
 module "load_balancer" {
-  source       = "github.com/nubisproject/nubis-terraform//load_balancer?ref=v2.3.0"
+  source       = "github.com/gozer/nubis-terraform//load_balancer?ref=issue%2F283%2Felb-acm"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"
@@ -39,16 +44,16 @@ module "load_balancer" {
   health_check_healthy_threshold   = 3
   health_check_unhealthy_threshold = 3
 
-  ssl_cert_name_prefix = "${var.service_name}"
+  ssl_cert_arn         = "${aws_acm_certificate.voice.arn}"
 }
 
 module "dns" {
-  source       = "github.com/nubisproject/nubis-terraform//dns?ref=v2.3.0"
+  source       = "github.com/nubisproject/nubis-terraform//dns?ref=v2.4.0"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"
   service_name = "${var.service_name}"
-  target       = "${module.load_balancer.address}"
+  target       = "${module.load_balancer.dualstack_address}"
 }
 
 resource "aws_db_parameter_group" "slow_query_enabled" {
@@ -63,24 +68,56 @@ resource "aws_db_parameter_group" "slow_query_enabled" {
 }
 
 module "database" {
-  source                 = "github.com/nubisproject/nubis-terraform//database?ref=v2.3.0"
+  source                 = "github.com/nubisproject/nubis-terraform//database?ref=v2.4.0"
   region                 = "${var.region}"
   environment            = "${var.environment}"
   account                = "${var.account}"
   nubis_sudo_groups      = "${var.nubis_sudo_groups}"
   monitoring             = true
+  multi_az               = "${var.environment == "prod" ? true : false}"
   service_name           = "${var.service_name}"
   client_security_groups = "${module.worker.security_group}"
   parameter_group_name   = "${aws_db_parameter_group.slow_query_enabled.id}"
-  instance_class         = "${var.environment == "prod" ? "db.t2.medium" : "db.t2.small"}"
+  instance_class         = "${var.environment == "prod" ? "db.t2.large" : "db.t2.small"}"
+  allocated_storage      = "${var.environment == "prod" ? "100" : "10"}"
 }
 
 module "clips" {
-  source       = "github.com/nubisproject/nubis-terraform//bucket?ref=v2.3.0"
+  #XXX: cors_rules will be added in Nubis v2.4.0
+  source       = "github.com/gozer/nubis-terraform//bucket?ref=v2.4.0"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"
   service_name = "${var.service_name}"
   purpose      = "clips"
   role         = "${module.worker.role}"
+
+  cors_rules = [
+    {
+      allowed_headers = ["Authorization"]
+      allowed_methods = ["GET"]
+      allowed_origins = ["*"]
+    },
+  ]
+}
+
+module "bundler_bucket" {
+  source       = "github.com/nubisproject/nubis-terraform//bucket?ref=v2.4.0"
+  region       = "${var.region}"
+  environment  = "${var.environment}"
+  account      = "${var.account}"
+  service_name = "${var.service_name}"
+  purpose      = "bundler"
+  role         = "${module.worker.role}"
+}
+
+# Add elastic cache (memcache)
+module "cache" {
+  source                 = "github.com/gozer/nubis-terraform//cache?ref=v2.4.0"
+  region                 = "${var.region}"
+  environment            = "${var.environment}"
+  account                = "${var.account}"
+  service_name           = "${var.service_name}"
+  client_security_groups = "${module.worker.security_group}"
+  engine                 = "redis"
 }

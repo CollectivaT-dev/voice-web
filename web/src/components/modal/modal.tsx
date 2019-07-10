@@ -7,11 +7,11 @@ interface ButtonConfig {
   [name: string]: () => any;
 }
 
-interface Props {
+export interface ModalProps {
   buttons?: ButtonConfig;
   children?: React.ReactNode;
   innerClassName?: string;
-  onRequestClose?: (event?: MouseEvent | KeyboardEvent) => any;
+  onRequestClose?: (event?: React.MouseEvent | React.KeyboardEvent) => any;
 }
 
 export const ModalButtons = (props: any) => (
@@ -23,7 +23,7 @@ export default ({
   children,
   innerClassName = '',
   ...props
-}: Props) => (
+}: ModalProps) => (
   <Modal
     isOpen={true}
     contentLabel="modal"

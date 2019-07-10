@@ -25,6 +25,8 @@ export type CommonVoiceConfig = {
     CLIENT_SECRET: string;
   };
   BASKET_API_KEY?: string;
+  IMPORT_SENTENCES: boolean;
+  REDIS_URL: string;
 };
 
 const DEFAULTS: CommonVoiceConfig = {
@@ -46,12 +48,15 @@ const DEFAULTS: CommonVoiceConfig = {
   ADMIN_EMAILS: '[]', // array of admin emails, as JSON
   S3_CONFIG: {
     signatureVersion: 'v4',
+    useDualstack: true,
   },
   AUTH0: {
     DOMAIN: '',
     CLIENT_ID: '',
     CLIENT_SECRET: '',
   },
+  IMPORT_SENTENCES: true,
+  REDIS_URL: null,
 };
 
 let injectedConfig: CommonVoiceConfig;
@@ -76,7 +81,7 @@ export function getConfig(): CommonVoiceConfig {
     let config_path = process.env.SERVER_CONFIG_PATH || './config.json';
     config = JSON.parse(fs.readFileSync(config_path, 'utf-8'));
   } catch (err) {
-    console.log('could not load config.json, using defaults');
+    console.error(err, 'could not load config.json, using defaults');
   }
   loadedConfig = { ...DEFAULTS, ...config };
 

@@ -1,6 +1,6 @@
-/**
- * Functions to be shared across mutiple modules.
- */
+import { UserClient } from 'common/user-clients';
+
+const SEARCH_REG_EXP = new RegExp('</?[^>]+(>|$)', 'g');
 
 /**
  * Generate RFC4122 compliant globally unique identifier.
@@ -11,13 +11,6 @@ export function generateGUID(): string {
       v = c == 'x' ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
-}
-
-/**
- * Capitalize first letter for nice display.
- */
-export function capitalizeFirstLetter(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
@@ -67,10 +60,9 @@ export function isSafari(): boolean {
    * string in the user agent. E.g. Safari has Version/<version>, Chrome has
    * CriOS/<version>, Firefox has FxiOS/<version>.
    */
-  const isWebkit = this.isWebkit();
   const pretendsSafari = /Safari/i.test(userAgent);
   const isSafari = /Version/i.test(userAgent);
-  return isWebkit && pretendsSafari && isSafari;
+  return isWebkit() && pretendsSafari && isSafari;
 }
 
 /**
@@ -80,25 +72,26 @@ export function isSafari(): boolean {
  */
 export function isMobileWebkit(): boolean {
   return (
-    this.isIOS() &&
-    this.isWebkit() &&
+    isIOS() &&
+    isWebkit() &&
     !/(Chrome|CriOS|OPiOS)/.test(window.navigator.userAgent)
   );
+}
+
+export function isMobileResolution(): boolean {
+  return window.matchMedia('(max-width: 768px)').matches;
 }
 
 export function isProduction(): boolean {
   return window.location.origin === 'https://voice.mozilla.org';
 }
 
-export function getItunesURL(): string {
-  return 'https://itunes.apple.com/us/app/project-common-voice-by-mozilla/id1240588326';
+export function isStaging(): boolean {
+  return window.location.origin === 'https://voice.allizom.org';
 }
 
-/**
- * Returns a promise that resolves after ms.
- */
-export function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+export function getItunesURL(): string {
+  return 'https://itunes.apple.com/us/app/project-common-voice-by-mozilla/id1240588326';
 }
 
 /**
@@ -108,4 +101,30 @@ export function replacePathLocale(pathname: string, locale: string) {
   const pathParts = pathname.split('/');
   pathParts[1] = locale;
   return pathParts.join('/');
+}
+
+export function getManageSubscriptionURL(account: UserClient) {
+  const firstLanguage = account.locales[0];
+  return `https://www.mozilla.org/${
+    firstLanguage ? firstLanguage.locale + '/' : ''
+  }newsletter/existing/${account.basket_token}`;
+}
+
+export async function hash(text: string) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const digest = await window.crypto.subtle.digest('SHA-256', data);
+
+  return [...new Uint8Array(digest)]
+    .map(value => value.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+export function stringContains(haystack: string, needles: string) {
+  return (
+    haystack
+      .toUpperCase()
+      .replace(SEARCH_REG_EXP, '')
+      .indexOf(needles) !== -1
+  );
 }

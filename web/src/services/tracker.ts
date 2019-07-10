@@ -2,14 +2,19 @@ import { isProduction } from '../utility';
 
 declare const ga: any;
 
-function track(
+export function track(
   category:
-    | 'Navigation'
+    | 'Home-New'
     | 'Recording'
     | 'Listening'
     | 'Profile'
+    | 'Languages'
     | 'Data'
-    | 'Sharing',
+    | 'Sharing'
+    | 'Dashboard'
+    | 'Global'
+    | 'Nav'
+    | 'Landing',
   action: string,
   locale?: string
 ) {
@@ -18,15 +23,62 @@ function track(
   }
 }
 
+export function trackGlobal(
+  action:
+    | 'change-language'
+    | 'github'
+    | 'discourse'
+    | 'contact'
+    | 'footer-newsletter'
+    | 'slack',
+  locale: string
+) {
+  track('Global', action, locale);
+}
+
+export function trackNav(route: string, locale: string) {
+  track('Nav', route, locale);
+}
+
+export function trackHome(
+  action:
+    | 'speak'
+    | 'speak-mars'
+    | 'listen'
+    | 'read-more'
+    | 'metric-locale-change'
+    | 'change-benefits-tabs'
+    | 'click-whats-public-item'
+    | 'click-benefits-item'
+    | 'click-benefits-register',
+  locale: string
+) {
+  track('Home-New', action, locale);
+}
+
 export function trackRecording(
-  action: 'record' | 'submit' | 'rerecord' | 'shortcut',
+  action:
+    | 'record'
+    | 'submit'
+    | 'rerecord'
+    | 'view-shortcuts'
+    | 'shortcut'
+    | 'skip'
+    | 'listen',
   locale: string
 ) {
   track('Recording', action, locale);
 }
 
 export function trackListening(
-  action: 'listen' | 'listen-home' | 'vote-yes' | 'vote-no' | 'shortcut',
+  action:
+    | 'listen'
+    | 'listen-home'
+    | 'vote-yes'
+    | 'vote-no'
+    | 'view-shortcuts'
+    | 'shortcut'
+    | 'skip',
   locale: string
 ) {
   track('Listening', action, locale);
@@ -34,30 +86,51 @@ export function trackListening(
 
 export function trackProfile(
   action:
+    | 'create'
     | 'give-email'
     | 'give-username'
     | 'give-accent'
     | 'give-age'
     | 'give-gender'
+    | 'give-avatar',
+  locale: string
 ) {
-  track('Profile', action);
+  track('Profile', action, locale);
 }
 
-export function trackDataset(
-  action: string
-  //   | 'open-modal'
-  //   | 'open-bundle-modal'
-  //   | 'download-{datasetname}
-  //   | 'download-bundle'
-  //   | 'post-download-signup'
+export function trackLanguages(
+  action:
+    | 'open-request-language-modal'
+    | 'contribute'
+    | 'see-more'
+    | 'see-less',
+  locale: string
 ) {
-  track('Data', action);
+  track('Languages', action, locale);
 }
 
-export function trackNavigation(action: 'progress-to-record') {
-  track('Navigation', action);
+export function trackDataset(action: string, locale: string) {
+  track('Data', action, locale);
 }
 
-export function trackSharing(channel: 'facebook' | 'twitter' | 'link') {
-  track('Sharing', channel);
+export function trackSharing(
+  channel: 'facebook' | 'twitter' | 'link',
+  locale: string
+) {
+  track('Sharing', channel, locale);
+}
+
+export function trackDashboard(
+  action:
+    | 'speak-cta'
+    | 'listen-cta'
+    | 'change-language'
+    | 'leaderboard-load-more',
+  locale: string
+) {
+  track('Dashboard', action, locale);
+}
+
+export function trackLanding(action: 'speak' | 'profile' | 'about') {
+  track('Landing', action);
 }

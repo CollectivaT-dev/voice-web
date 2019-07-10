@@ -1,43 +1,34 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useAction } from '../../hooks/store-hooks';
 import { Notifications } from '../../stores/notifications';
 
 import './notification-pill.css';
 
 const NOTIFICATION_TIMEOUT_MS = 3000;
 
-interface PropsFromDispatch {
-  removeNotification: typeof Notifications.actions.remove;
+export default function NotificationPill({
+  notification,
+}: {
+  notification: Notifications.Notification;
+}) {
+  const removeNotification = useAction(Notifications.actions.remove);
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setShow(false), NOTIFICATION_TIMEOUT_MS);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  return (
+    <div
+      className={
+        'notification-pill ' +
+        (notification.kind == 'pill' ? notification.type : '')
+      }
+      style={{ opacity: show ? 1 : 0 }}
+      onTransitionEnd={() => removeNotification(notification.id)}>
+      {notification.content}
+    </div>
+  );
 }
-
-class NotificationPill extends React.Component<
-  Notifications.Notification & PropsFromDispatch
-> {
-  state = { show: true };
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ show: false });
-    }, NOTIFICATION_TIMEOUT_MS);
-  }
-
-  remove = () => {
-    const { id, removeNotification } = this.props;
-    removeNotification(id);
-  };
-
-  render() {
-    return (
-      <div
-        className="notification-pill"
-        style={{ opacity: this.state.show ? 1 : 0 }}
-        onTransitionEnd={this.remove}>
-        {this.props.content}
-      </div>
-    );
-  }
-}
-
-export default connect<void, PropsFromDispatch>(null, {
-  removeNotification: Notifications.actions.remove,
-})(NotificationPill);

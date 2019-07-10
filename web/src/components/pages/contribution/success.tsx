@@ -1,11 +1,10 @@
-import { LocalizationProps, Localized, withLocalization } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { useEffect, useRef, useState } from 'react';
 import { DAILY_GOAL } from '../../../constants';
-import API from '../../../services/api';
-import StateTree from '../../../stores/tree';
-import { User } from '../../../stores/user';
+import { useAccount, useAPI } from '../../../hooks/store-hooks';
 import URLS from '../../../urls';
+import CustomGoalLock from '../../custom-goal-lock';
 import { LocaleLink } from '../../locale-helpers';
 import { CheckIcon, MicIcon, PlayOutlineIcon } from '../../ui/icons';
 import { Button, LinkButton, TextButton } from '../../ui/ui';
@@ -28,149 +27,150 @@ const GoalPercentage = ({
   </span>
 );
 
-interface PropsFromState {
-  api: API;
-  hasEnteredInfo: boolean;
-}
-
-interface Props extends LocalizationProps, PropsFromState {
+export default function Success({
+  onReset,
+  type,
+}: {
   type: 'speak' | 'listen';
   onReset: () => any;
-}
+}) {
+  const api = useAPI();
+  const account = useAccount();
 
-interface State {
-  contributionCount: number;
-  currentCount: number;
-}
+  const hasAccount = Boolean(account);
+  const customGoal = hasAccount && account.customGoal;
+  const goalValue = DAILY_GOAL[type];
 
-class Success extends React.Component<Props, State> {
-  state: State = { contributionCount: null, currentCount: null };
+  const killAnimation = useRef(false);
+  const startedAt = useRef(null);
+  const [contributionCount, setContributionCount] = useState(null);
+  const [currentCount, setCurrentCount] = useState(null);
 
-  killAnimation = false;
-
-  async componentDidMount() {
-    const { api, type } = this.props;
-    this.setState(
-      {
-        contributionCount:
-          (await (type === 'speak'
-            ? api.fetchDailyClipsCount()
-            : api.fetchDailyVotesCount())) + SET_COUNT,
-      },
-      () => this.countUp(performance.now())
-    );
-  }
-
-  componentWillUnmount() {
-    this.killAnimation = true;
-  }
-
-  private startedAt: number;
-  private countUp = (time: number) => {
-    if (this.killAnimation) return;
-    if (!this.startedAt) this.startedAt = time;
-    const { contributionCount } = this.state;
+  function countUp(time: number) {
+    if (killAnimation.current) return;
+    if (!startedAt.current) startedAt.current = time;
     const newCount = Math.min(
-      Math.ceil(contributionCount * (time - this.startedAt) / COUNT_UP_MS),
+      Math.ceil((contributionCount * (time - startedAt.current)) / COUNT_UP_MS),
       contributionCount
     );
-    this.setState({
-      currentCount: newCount,
-    });
+    setCurrentCount(newCount);
+
     if (newCount < contributionCount) {
-      requestAnimationFrame(this.countUp);
+      requestAnimationFrame(countUp);
     }
-  };
-
-  render() {
-    const { getString, hasEnteredInfo, onReset, type } = this.props;
-    const { contributionCount, currentCount } = this.state;
-    const finalPercentage = Math.ceil(
-      100 * (contributionCount || 0) / DAILY_GOAL[type]
-    );
-
-    const ContributeMoreButton = (props: { children: React.ReactNode }) =>
-      hasEnteredInfo ? (
-        <Button
-          className="contribute-more-button"
-          rounded
-          onClick={onReset}
-          {...props}
-        />
-      ) : (
-        <TextButton
-          className="contribute-more-button secondary"
-          onClick={onReset}
-          {...props}
-        />
-      );
-
-    return (
-      <div className="contribution-success">
-        <div className="counter done">
-          <CheckIcon />
-          {SET_COUNT}/{SET_COUNT}
-          <Localized id="clips">
-            <span className="text" />
-          </Localized>
-        </div>
-
-        <Localized
-          id={type === 'speak' ? 'goal-help-recording' : 'goal-help-validation'}
-          goalPercentage={
-            <GoalPercentage
-              current={Math.ceil(
-                100 *
-                  (currentCount === null ? 0 : currentCount) /
-                  DAILY_GOAL[type]
-              )}
-              final={finalPercentage}
-            />
-          }
-          $goalValue={DAILY_GOAL[type]}>
-          <h1 />
-        </Localized>
-
-        <div className="progress">
-          <div
-            className="done"
-            style={{
-              width: Math.min(finalPercentage, 100) + '%',
-            }}
-          />
-        </div>
-
-        {!hasEnteredInfo && (
-          <div className="profile-card">
-            <Localized id="profile-explanation">
-              <p />
-            </Localized>
-            <Localized id="profile-create">
-              <LinkButton rounded to={URLS.PROFILE} />
-            </Localized>
-          </div>
-        )}
-
-        <ContributeMoreButton>
-          {type === 'speak' ? <MicIcon /> : <PlayOutlineIcon />}
-          <Localized id="contribute-more" $count={SET_COUNT}>
-            <span />
-          </Localized>
-        </ContributeMoreButton>
-
-        {hasEnteredInfo && (
-          <Localized id="edit-profile">
-            <LocaleLink className="secondary" to={URLS.PROFILE} />
-          </Localized>
-        )}
-      </div>
-    );
   }
-}
 
-export default withLocalization(
-  connect<PropsFromState>(({ api, user }: StateTree) => ({
-    api,
-    hasEnteredInfo: User.selectors.hasEnteredInfo(user),
-  }))(Success)
-);
+  useEffect(() => {
+    (type === 'speak'
+      ? api.fetchDailyClipsCount()
+      : api.fetchDailyVotesCount()
+    ).then(value => {
+      setContributionCount(value + SET_COUNT);
+    });
+    return () => {
+      killAnimation.current = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (contributionCount != null) {
+      countUp(performance.now());
+    }
+  }, [contributionCount]);
+
+  const finalPercentage = Math.ceil(
+    (100 * (contributionCount || 0)) / goalValue
+  );
+
+  const ContributeMoreButton = (props: { children: React.ReactNode }) =>
+    hasAccount ? (
+      <Button
+        className="contribute-more-button"
+        rounded
+        onClick={onReset}
+        {...props}
+      />
+    ) : (
+      <TextButton
+        className="contribute-more-button secondary"
+        onClick={onReset}
+        {...props}
+      />
+    );
+
+  const goalPercentage = (
+    <GoalPercentage
+      current={Math.ceil(
+        (100 * (currentCount === null ? 0 : currentCount)) / goalValue
+      )}
+      final={finalPercentage}
+    />
+  );
+
+  return (
+    <div className="contribution-success">
+      <div className="counter done">
+        <CheckIcon />
+        <Localized
+          id="clips-with-count"
+          bold={<b />}
+          $count={SET_COUNT + '/' + SET_COUNT}>
+          <span className="text" />
+        </Localized>
+      </div>
+
+      <Localized
+        id={type === 'speak' ? 'goal-help-recording' : 'goal-help-validation'}
+        goalPercentage={goalPercentage}
+        $goalValue={goalValue}>
+        <h1 />
+      </Localized>
+
+      <div className="progress">
+        <div
+          className="done"
+          style={{
+            width: Math.min(finalPercentage, 100) + '%',
+          }}
+        />
+      </div>
+
+      {hasAccount ? (
+        !customGoal && (
+          <CustomGoalLock>
+            <div className="info-card">
+              <p>
+                Build a personal goal and help us reach 10k hours in English
+              </p>
+              <LinkButton rounded href={URLS.GOALS}>
+                Get started with goals
+              </LinkButton>
+            </div>
+          </CustomGoalLock>
+        )
+      ) : (
+        <div className="info-card">
+          <Localized id="profile-explanation">
+            <p />
+          </Localized>
+          <Localized id="login-signup">
+            <LinkButton rounded href="/login" />
+          </Localized>
+        </div>
+      )}
+
+      <ContributeMoreButton>
+        {type === 'speak' ? <MicIcon /> : <PlayOutlineIcon />}
+        <Localized id="contribute-more" $count={SET_COUNT}>
+          <span />
+        </Localized>
+      </ContributeMoreButton>
+
+      {hasAccount && (
+        <Localized id="edit-profile">
+          <LocaleLink className="secondary" to={URLS.PROFILE_INFO} />
+        </Localized>
+      )}
+    </div>
+  );
+}

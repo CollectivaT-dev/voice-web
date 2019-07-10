@@ -1,80 +1,77 @@
-import { LocalizationProps, Localized, withLocalization } from 'fluent-react';
+import {
+  LocalizationProps,
+  Localized,
+  withLocalization,
+} from 'fluent-react/compat';
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { useRef } from 'react';
 import { trackSharing } from '../../services/tracker';
 import { Notifications } from '../../stores/notifications';
 import { FontIcon } from '../ui/icons';
+import { useLocale } from '../locale-helpers';
 
 import './share-buttons.css';
+import { useAction } from '../../hooks/store-hooks';
 
 const SHARE_URL = 'https://voice.mozilla.org/';
 
-interface PropsFromDispatch {
-  addNotification: typeof Notifications.actions.add;
+interface Props extends LocalizationProps {
+  shareText?: string;
 }
 
-class ShareButtons extends React.Component<
-  LocalizationProps & PropsFromDispatch
-> {
-  shareURLInputRef: { current: HTMLInputElement | null } = React.createRef();
+function ShareButtons({ getString, shareText }: Props) {
+  const [locale] = useLocale();
+  const addNotification = useAction(Notifications.actions.addPill);
+  const encodedShareText = encodeURIComponent(
+    shareText
+      ? shareText.replace('{link}', SHARE_URL)
+      : getString('share-text', { link: SHARE_URL })
+  );
+  const shareURLInputRef = useRef(null);
 
-  private copyShareURL = () => {
-    this.shareURLInputRef.current.select();
-    document.execCommand('copy');
-    trackSharing('link');
+  return (
+    <React.Fragment>
+      <button
+        id="link-copy"
+        className="share-button"
+        onClick={() => {
+          shareURLInputRef.current.select();
+          document.execCommand('copy');
+          trackSharing('link', locale);
 
-    this.props.addNotification(
-      <React.Fragment>
-        <FontIcon type="link" className="icon" />{' '}
-        <Localized id="link-copied">
-          <span />
-        </Localized>
-      </React.Fragment>
-    );
-  };
-
-  render() {
-    const encodedShareText = encodeURIComponent(
-      this.props.getString('share-text', { link: SHARE_URL })
-    );
-    return (
-      <React.Fragment>
-        <button
-          id="link-copy"
-          className="share-button"
-          onClick={this.copyShareURL}>
-          <input
-            type="text"
-            readOnly
-            value={SHARE_URL}
-            ref={this.shareURLInputRef}
-          />
-          <FontIcon type="link" />
-        </button>
-        <a
-          className="share-button"
-          href={'https://twitter.com/intent/tweet?text=' + encodedShareText}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackSharing('twitter')}>
-          <FontIcon type="twitter" />
-        </a>
-        <a
-          className="share-button"
-          href={
-            'https://www.facebook.com/sharer/sharer.php?u=' +
-            encodeURIComponent(SHARE_URL)
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackSharing('facebook')}>
-          <FontIcon type="facebook" />
-        </a>
-      </React.Fragment>
-    );
-  }
+          addNotification(
+            <React.Fragment>
+              <FontIcon type="link" className="icon" />{' '}
+              <Localized id="link-copied">
+                <span />
+              </Localized>
+            </React.Fragment>
+          );
+        }}>
+        <input type="text" readOnly value={SHARE_URL} ref={shareURLInputRef} />
+        <FontIcon type="link" />
+      </button>
+      <a
+        className="share-button"
+        href={
+          'https://www.facebook.com/sharer/sharer.php?u=' +
+          encodeURIComponent(SHARE_URL)
+        }
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackSharing('facebook', locale)}>
+        <FontIcon type="facebook" />
+      </a>
+      <a
+        className="share-button"
+        href={'https://twitter.com/intent/tweet?text=' + encodedShareText}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackSharing('twitter', locale)}>
+        <FontIcon type="twitter" />
+      </a>
+    </React.Fragment>
+  );
 }
 
-export default connect<void, PropsFromDispatch>(null, {
-  addNotification: Notifications.actions.add,
-})(withLocalization(ShareButtons));
+export default withLocalization(ShareButtons);

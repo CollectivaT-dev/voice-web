@@ -8,6 +8,8 @@ email-input =
     .label = E-poçt
 submit-form-action = Göndər
 loading = Yüklənir…
+email-opt-in-privacy = E-poçtlar üçün abunə olmaqla bu məlumatın Mozilla tərəfindən <privacyLink>Məxfilik Siyasəti<privacyLink>nə əsasən işlədilməsini qəbul etmiş olursunuz.
+indicates-required = * Tələb edilən bölmələri göstərir
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -15,11 +17,14 @@ loading = Yüklənir…
 
 ## Languages
 
+ace = Açecə
+af = Afrikaans
 an = Araqonca
 ar = Ərəbcə
 as = Assam dili
 ast = Asturiyaca
 az = Azərbaycanca
+bg = Bolqar dili
 bn = Benqal dili
 br = Breton dili
 bxr = Buryatca
@@ -37,6 +42,8 @@ en = İngiliscə
 eo = Esperanto
 es = İspanca
 et = Estonca
+eu = Basqca
+fa = Farsca
 fi = Fincə
 fo = Farer dili
 fr = Fransızca
@@ -57,19 +64,23 @@ ko = Koreya dili
 kpv = Komi-zıryan dili
 kw = Korniş dili
 ky = Qırğızca
+mdf = Mokşa dili
 mk = Makedon dili
+mn = Monqolca
 myv = Erzyan dili
 nb-NO = Norveç Bukmolu
 ne-NP = Nepal dili
 nl = Hollandca
 nn-NO = Norveç Nyunorsku
+oc = Oksitanca
 or = Odia dili
 pl = Polyakca
 pt-BR = Portuqalca (Braziliya)
-rm = Romanş dili
+rm-sursilv = Romanş Sursilvan dili
 ro = Rumın dili
 ru = Rusca
 sah = Saxa dili
+sc = Sardincə
 sk = Slovakca
 sl = Slovencə
 sq = Alban dili
@@ -83,6 +94,7 @@ tt = Tatarca
 uk = Ukrayna dili
 ur = Urdu dili
 uz = Özbəkcə
+vi = Vyetnamca
 zh-CN = Çincə (Çin)
 zh-HK = Çincə (Honq Konq)
 zh-TW = Çincə (Tayvan)
@@ -108,9 +120,7 @@ share-title = Səsini ianə edəcək başqa insanları tapmağa kömək et!
 share-text = Maşınlara real insanların necə danışdıqlarını öyrətməyə kömək et, səsinizi ianə edin: { $link }
 link-copied = Keçid Köçürüldü
 back-top = Üstə Qayıt
-contribution-banner-text = Yeni dəstək interfeysini yayına aldıq
-contribution-banner-button = Göz gəzdir
-report-bugs-link = Xətaları bildirməyə kömək et
+logout = Çıx
 
 ## Home Page
 
@@ -121,6 +131,8 @@ wall-of-text-more-mobile = Böyük şirkətlər tərəfindən işlədilən məlu
 wall-of-text-more-desktop =
     Artıq siz də səsinizi paylaşaraq hamının cihaz və web üçün innovativ tətbiqlər üçün işlədə biləcəkləri açıq mənbəəli səs sistemləri inşa etməyimizə kömək edə bilərsiz.<lineBreak></lineBreak>
     Cümlələri səsləndirərək maşınlara real insanların necə danışdıqlarını öyrədin. Digər dəstəkçilərin işlərini yoxlayaraq keyfiyyəti artırın. Bu qədər asanlıqla!
+wall-of-text-first = Səs naturaldır, insancadır. Bu səbəbdən maşınlarımız üçün işlək səs texnologiyalarını yaratmaq istəyirik. Amma səs sistemlərini yaratmaq üçün tərtibatçılara kalan səs qeydləri lazımdır.
+wall-of-text-second = Böyük şirkətlər tərəfindən işlədilən məlumatlar insanların çoxu üçün əlçatmazdır. Bunun yenilikləri əngəllədiyini düşünürük. Bu səbəbdən səs tanıma sistemlərini hamıya açıq hala gətirəcək Common Voice Proyektini başlatdıq.
 show-wall-of-text = Ətraflı Oxu
 help-us-title = Cümlələri təsdiqləməyə kömək et!
 help-us-explain = Oxut, dinlə və xəbər ver: aşağıdakı cümləni düz səsləndirdilər?
@@ -128,6 +140,36 @@ no-clips-to-validate = Görünür bu dildə dinləyəsi kliplər yoxdur. Siyahı
 vote-yes = Bəli
 vote-no = Xeyr
 toggle-play-tooltip = Oxutma modunu keçirtmək üçün { shortcut-play-toggle } basın
+speak-subtitle = Səsinizi iadə edin
+speak-paragraph = Səs klipləri açıq məlumat bazasını qurmağımızın ən əsas hissəsidir; bəziləri üçün bu həm də ən əyləncəli hissədir.
+speak-goal-text = Qeyd edilmiş kliplər
+listen-subtitle = Səsləri təsdiqləməyimizə kömək edin
+listen-paragraph = İanə edilmiş klipləri təsdiqləmək Common Voice missiyası üçün eyni səviyyədə əhəmiyyətlidir. Qulaq asın və keyfiyyətli açıq səs məlumatları yaratmağımıza kömək edin.
+listen-goal-text = Təsdiqlənmiş kliplər
+hours-recorded = Qeyd etmə saatları
+hours-validated = Təsdiqləmə saatları
+voices-online = İndi onlayn olan səslər
+todays-progress = Bu günün irəliləyişi
+help-reach-goal = { $goal } səviyyəsinə çatmağımıza kömək et
+read-terms-q = Şərtlərimizi oxumusunuz?
+ready-to-record = Səsinizi verməyə hazırsınız?
+all-locales = Hamısı
+today = Bu gün
+x-weeks-short =
+    { $count ->
+        [one] Həftə
+       *[other] { $count }həftə
+    }
+x-months-short =
+    { $count ->
+        [one] { $count }ay
+       *[other] { $count }ay
+    }
+x-years-short =
+    { $count ->
+        [one] { $count }il
+       *[other] { $count }il
+    }
 
 ## Speak & Listen Shortcuts
 
@@ -172,8 +214,6 @@ english = İngiliscə
 
 ## ProfileForm
 
-profile-form-cancel = Formadan çıx
-profile-form-delete = Profili Sil
 profile-form-username =
     .label = İstifadəçi adı
 profile-form-language =
@@ -184,22 +224,56 @@ profile-form-age =
     .label = Yaş
 profile-form-gender =
     .label = Cins
+leaderboard-visibility =
+    .label = Öndərlər Siyahısı Görünüşü
+hidden = Gizli
+visible = Görünən
+native-language =
+    .label = Ana Dili
 profile-form-submit-save = Saxla
 profile-form-submit-saved = Saxlandı
-profile-keep-data = Məlumatı saxla
-profile-delete-data = Məlumatı sil
 male = Kişi
 female = Qadın
 # Gender
 other = Digər
 why-profile-title = Niyə profil?
 why-profile-text = Haqqınızda bəzi məlumatları verərək Common Voice üçün göndərdiyiniz səs məlumatlarını Səs Tanıma mühərriyi üçün daha mənalı hala gətirə bilərsiz.
+dashboard = İdarə paneli
+build-profile = Profil yarat
+avatar = Avatar
+goals = Hədəflər
+settings = Tənzimləmələr
 edit-profile = Profili Düzəlt
-profile-create = Profil yarat
 profile-create-success = Profil uğurla yaradıldı!
 profile-close = Qapat
-profile-clear-modal = Profil məlumatlarınızı təmizlədiyinizdə bu demoqrafik məlumat və səs qeydləriniz Common Voice-ə göndərilməyəcək.
 profile-explanation = Profil yaradaraq müvəffəqiyyətlərinizi izləyə və səs məlumatlarımızı daha dəqiq hala gətirə bilərsiz.
+thanks-for-account = Hesabınızı təsdiqlədiyiniz üçün təşəkkürlər, indi də profilinizi düzəldək.
+why-demographic = Bu nəyə lazımdır?
+why-demographic-explanation = Anonimləşdirilmiş yaş, cinsiyyət və ləhcə kimi məlumatlar səs tanıma mühərriklərini öyrətmədə dəqiqliyi artırmaq üçün kömək edir. İstifadəçi adınız göndərdiyiniz məlumatlarla heç vaxt əlaqələndirilməyəcək və həmçinin istifadəçi adınızı ictimai edib-etməməyi seçə bilərsiz.
+keep-me-posted =
+    .label = Yeniliklərdən və Common Voice proyektindəki dəyişikliklərdən xəbərdar olmaq istəyirəm.
+accept-privacy = Bu məlumatı Mozillanın <privacyLink>Məxfilik Siyasəti</privacyLink>nə əsasən işləməyinizə razıyam
+login-identity = Giriş İdentikliyi
+login-signup = Daxil ol / Qeydiyyatdan keç
+edit = Redaktə et
+email-subscriptions = E-poçt Abunəlikləri
+download-profile = Məlumatlarımı endir
+contribution-experience = Kömək Təcrübəsi
+skip-submission-feedback = Əks-əlaqə göndərməyi keç
+skip-submission-description = Kömək vaxtı "Göndər" düyməsinə kliklədikdən sonra əks-əlaqə göndərmə keçiləcək. Kömək birbaşa bir sonrakı 5 qeydiyyat və ya təsdiqləmə ilə davam edəcək.
+skip-submission-note = Qeyd: Siz yenə də kömək növünü dəyişmək üçün Danış və ya Qulaq as seçməli olacaqsız.
+off = Sönülü
+on = Açıq
+add-avatar-title = Profilinizə avatar əlavə edin
+browse-file-title = Şəkil faylı yüklə
+browse-file = Daşı və burax və ya <browseWrap>Gəz</browseWrap>
+connect-gravatar = Gravatar ilə qoşul
+gravatar_not_found = E-poçtunuz üçün gravatar tapılmadı
+file_too_large = Seçilən fayl çox böyükdür
+manage-subscriptions = Abunəlikləri idarə et
+email-already-used = E-poçt artıq digər bir hesab üçün işlədilir
+add-language = Dil əlavə et
+change-email-setings = E-poçtunuzu Daxil olma identifikasiyası altında Tənzimləmələrdə dəyişdirin
 
 ## FAQ
 
@@ -223,11 +297,6 @@ faq-hours-a = Bu işlək STT (səsdən yazıya) üçün tələb edilən təxmini
 faq-source-q = Qaynaq mətnləri haradan gəlir?
 faq-source-a1 = Mövcud cümlələr dəstəkçilərdən və <italic>It’s a Wonderful Life</italic> kimi ictimai film ssenari yazılarından gəlir.
 faq-source-a2 = Qaynaq mətnlərimizi <dataLink>bu Github qovluğunda</dataLink> görə bilərsiz.
-
-## Profile
-
-profile-why-title = Niyə profil tələb edilir?
-profile-why-content = Haqqınızda bəzi məlumatları verməklə Common Voice üçün göndərdiyiniz səs qeydlərini bu məlumatları işlədən Səs Tanıma mühərriklərinin keyfiyyətini artırmaq üçün daha yararlı hala gətirə bilərsiz.
 
 ## NotFound
 
@@ -256,21 +325,6 @@ data-bundle-button = Məlumat bazası paketini endir
 data-bundle-description = Common Voice bazası və yuxarıdakı bütün digər səs bazaları.
 license = Lisenziya: <licenseLink>{ $license }</licenseLink>
 license-mixed = Qarışıq
-
-## Record Page
-
-record-platform-not-supported = Üzr istəyirik, amma platformanız hazırda dəstəklənmir.
-record-platform-not-supported-desktop = Masaüstü kompüterinizdə bu son səyyahları endirə bilərsiz:
-record-platform-not-supported-ios = <bold>iOS</bold> istifadəçiləri pulsuz tətbiqimizi endirə bilərlər:
-record-must-allow-microphone = Mikrofona icazə verməlisiniz.
-record-retry = Təkrar yoxla
-record-no-mic-found = Mikrofon tapılmadı.
-record-error-too-short = Qeyd çox qısa idi.
-record-error-too-long = Qeyd çox uzun idi.
-record-error-too-quiet = Qeyd çox sakit idi.
-record-submit-success = Uğurla göndərildi! Təkrar qeyd etmək istərdiniz?
-record-help = Lütfən qeyd-ə basın, sonra da üstdəki cümləni səsli oxuyun.
-record-cancel = Təkrar qeydi ləğv et
 review-terms = Common Voice işlətməklə <termsLink>Şərt</termsLink> və <privacyLink>Məxfilik Qeydləri</privacyLink>mizlə razılaşmış olursuz
 terms-agree = Razıyam
 terms-disagree = Razı deyiləm
@@ -315,7 +369,7 @@ request-language-success-content = Dilinizi Common Voice-ə necə əlavə edə b
 language-section-in-progress = Hazırlanır
 language-section-in-progress-description = Hazırlanmada olan dillər dəstəkləriniz üçün icmalarımız tərəfindən hazırlanır; onların irəliləyişi hazırda sayt tərcüməsi və cümlə yığmada nə vəziyyətdə olduqlarını göstərir.
 language-section-launched = Buraxılıb
-language-section-launched-description = Bu buraxılmış dillərdə sayt tərcüməsi tam hazırdır və davam edən <italic>{ speak }</italic> və <italic>{ listen }</italic> dəstəkləri üçün kifayət qədər cümlə yığılıb.
+language-section-launched-new-description = Bu buraxılmış dillərdə davamlı <italic>Danışıq</italic> və <italic>Dinləmə</italic> dəstəklərinə icazə vermək üçün sayt tam lokallaşdırılıb və lazım olan qədər cümlə yığılıb.
 languages-show-more = Daha çox göstər
 languages-show-less = Daha az göstər
 language-speakers = Danışan
@@ -336,7 +390,7 @@ contribute = Dəstək ol
 listen = Qulaq as
 skip = Keç
 shortcuts = Qısa yollar
-clips = Kliplər
+clips-with-count = <bold>{ $count }</bold> Klip
 goal-help-recording = Common Voice-in günlük { $goalValue } qeyd hədəfinin <goalPercentage></goalPercentage> qədərinə çatmağına dəstək oldunuz!
 goal-help-validation = Common Voice-in günlük { $goalValue } təsdiqləmə hədəfinin <goalPercentage></goalPercentage> qədərinə çatmağına dəstək oldunuz!
 contribute-more =
@@ -345,6 +399,15 @@ contribute-more =
        *[other] Daha { $count } dənə etməyə hazırsınız?
     }
 record-cta = Qeydə başla
+record-platform-not-supported = Üzr istəyirik, amma platformanız hazırda dəstəklənmir.
+record-platform-not-supported-desktop = Masaüstü kompüterinizdə bu son səyyahları endirə bilərsiz:
+record-platform-not-supported-ios = <bold>iOS</bold> istifadəçiləri pulsuz tətbiqimizi endirə bilərlər:
+record-must-allow-microphone = Mikrofona icazə verməlisiniz.
+record-no-mic-found = Mikrofon tapılmadı.
+record-error-too-short = Qeyd çox qısa idi.
+record-error-too-long = Qeyd çox uzun idi.
+record-error-too-quiet = Qeyd çox sakit idi.
+record-cancel = Təkrar qeydi ləğv et
 record-instruction = <recordIcon></recordIcon> düyməsinə { $actionType } və cümləni səsli oxuyun
 record-stop-instruction = Bitirdikdə <stopIcon></stopIcon> düyməsinə { $actionType }
 record-three-more-instruction = Üç dənə qaldı!
@@ -368,3 +431,49 @@ listen-last-time-instruction = <playIcon></playIcon>Sonuncu!
 nothing-to-validate = Bu il üçün təsdiqlənəcək məlumatlarımız yoxdur, növbəni doldurmağımıza kömək edin.
 record-button-label = Səsinizi qeyd edin
 share-title-new = Daha çox səs tapmağımıza <bold>Kömək edin</bold>
+
+## Goals
+
+streaks = Ardıcıl günlər
+days =
+    { $count ->
+        [one] Gün
+       *[other] Gün
+    }
+recordings =
+    { $count ->
+        [one] Qeyd
+       *[other] Qeyd
+    }
+validations =
+    { $count ->
+        [one] Təsdiqləmə
+       *[other] Təsdiqləmə
+    }
+
+## Dashboard
+
+your-languages = Dilləriniz
+toward-next-goal = Növbəti hədəf
+clips-you-recorded = Qeyd etdiyiniz kliplər
+clips-you-validated = Təsdiq etdiyiniz kliplər
+todays-recorded-progress = Bu günlük qeyd edilmiş kliplər üçün Common Voice-in irəliləyişi
+todays-validated-progress = Bu günlük təsdiq edilmiş kliplər üçün Common Voice-in irəliləyişi
+stats = Statistikalar
+you = Siz
+everyone = Hamı
+contribution-activity = Kömək aktivliyi
+top-contributors = Ən çox kömək edənlər
+recorded-clips = Qeyd edilmiş kliplər
+validated-clips = Təsdiqlənmiş kliplər
+total-approved = Ümumi Yoxlanılıb
+overall-accuracy = Ümumi Dəqiqlik
+
+## Profile Delete
+
+delete-q = Səs qeydlərinizin də silinməsini istərdiniz yoxsa onların Common Voice məlumat bazasında qalmasını?
+keep = Saxla
+remove = Sil
+keep-info = Anonim səs qeydləriniz Common Voice məlumat bazasında qalacaq. Profilinizi sildikdən sonra artıq qeydlərinizi məlumat bazasından silməyi tələb edə bilməyəcəksiniz.
+remove-info = Səs qeydlərinizin məlumat bazasından silinməsi tələbinizi incələyəcəyik. Tələbiniz təsdiqlənsə, məlumat bazasını endirənlərlə əlaqə saxlayıb sizin səs qeydlərinizi silmələrini istəyəcəyik.
+profile-form-delete = Profili Sil

@@ -58,7 +58,7 @@ exec { 'build':
 }
 
 systemd::unit_file { "${project_name}.service":
-  content => @("EOT")
+  content => @("EOT"/$)
 [Unit]
 Description=Mozilla Common Voice
 Wants=basic.target
@@ -72,6 +72,7 @@ Group=${project_name}-data
 WorkingDirectory=/var/www/${project_name}
 
 Environment=HOME=/var/www/${project_name}
+EnvironmentFile=/var/www/${project_name}/newrelic.env
 
 # Ensure logfile has proper permissions
 PermissionsStartOnly=true
@@ -79,7 +80,7 @@ PermissionsStartOnly=true
 ExecStartPre=/bin/touch /var/log/voice.log
 ExecStartPre=/bin/chown ${project_name}-data:${project_name}-data /var/log/voice.log
 
-ExecStart=/bin/bash -c '. /etc/profile.d/proxy.sh && /usr/bin/yarn start:prod | tee >(/usr/bin/rotatelogs -t /var/log/voice.log 86400)'
+ExecStart=/bin/bash -c '. /etc/profile.d/proxy.sh && NO_PROXY=.s3.amazonaws.com,\$NO_PROXY /usr/bin/yarn start:prod | tee >(/usr/bin/rotatelogs -t /var/log/voice.log 86400)'
 
 [Install]
 WantedBy=multi-user.target

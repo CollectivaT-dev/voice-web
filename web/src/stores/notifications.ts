@@ -2,7 +2,14 @@ export namespace Notifications {
   export type Notification = {
     id: number;
     content: any;
-  };
+  } & (
+    | {
+        kind: 'pill';
+        type: NotificationType;
+      }
+    | { kind: 'banner'; actionProps: any });
+
+  type NotificationType = 'success' | 'error';
 
   export type State = Notification[];
 
@@ -26,9 +33,13 @@ export namespace Notifications {
   let id = 0;
 
   export const actions = {
-    add: (content: any) => ({
+    addPill: (content: any, type: NotificationType = 'success') => ({
       type: ActionType.ADD,
-      notification: { id: ++id, content },
+      notification: { id: ++id, kind: 'pill', content, type },
+    }),
+    addBanner: (content: any, actionProps: any) => ({
+      type: ActionType.ADD,
+      notification: { id: ++id, kind: 'banner', content, actionProps },
     }),
     remove: (id: number) => ({
       type: ActionType.REMOVE,

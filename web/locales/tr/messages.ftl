@@ -8,6 +8,8 @@ email-input =
     .label = E-posta
 submit-form-action = Gönder
 loading = Yükleniyor…
+email-opt-in-privacy = E-posta almayı tercih ettiğinizde bu bilgileri Mozilla’nın <privacyLink>Gizlilik Politikası</privacyLink>’nda açıklandığı şekilde kullanmasını kabul etmiş oluyorsunuz.
+indicates-required = * Gerekli alanları gösterir
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -15,15 +17,22 @@ loading = Yükleniyor…
 
 ## Languages
 
+ab = Abhazca
+ace = Açece
+ady = Adıgece
+af = Afrikaans
+am = Amharca
 an = Aragonca
 ar = Arapça
 as = Assamca
 ast = Asturyanca
 az = Azerice
+bg = Bulgarca
 bn = Bengalce
 br = Bretonca
 bxr = Buryatça
 ca = Katalanca
+cak = Kakçikelce
 cnh = Hakha Chin
 cs = Çekçe
 cv = Çuvaşça
@@ -31,16 +40,25 @@ cy = Galce
 da = Danca
 de = Almanca
 dsb = Aşağı Sorbca
+dv = Maldivce
 el = Yunanca
 en = İngilizce
+eo = Esperanto
 es = İspanyolca
 et = Estonca
+eu = Baskça
+fa = Farsça
+ff = Fulaca
 fi = Fince
 fo = Faroece
 fr = Fransızca
 fy-NL = Frizce
 ga-IE = İrlandaca
+gl = Galce
+ha = Hausaca
 he = İbranice
+hi-IN = Hintçe
+hr = Hırvatça
 hsb = Yukarı Sorbca
 hu = Macarca
 ia = Interlingua
@@ -53,20 +71,31 @@ kab = Berberice
 kk = Kazakça
 ko = Korece
 kpv = Komi Zıryan
+ku = Kürtçe
 kw = Kernevekçe
 ky = Kırgızca
+lij = Liguryanca
+lt = Litvanca
+lv = Letonca
+mdf = Mokşa
 mk = Makedonca
+ml = Malayalam
+mn = Moğolca
 myv = Erzyanca
 nb-NO = Norveç Bokmål
 ne-NP = Nepalce
 nl = Felemenkçe
 nn-NO = Norveççe (Nynorsk)
+oc = Oksitanca
 or = Odia
 pl = Lehçe
 pt-BR = Portekizce (Brezilya)
+rm-sursilv = Romanşça Sursilvan
 ro = Rumence
 ru = Rusça
 sah = Yakutça
+sc = Sardinya dili
+si = Seylanca
 sk = Slovakça
 sl = Slovakça
 sq = Arnavutça
@@ -74,11 +103,16 @@ sr = Sırpça
 sv-SE = İsveççe
 ta = Tamilce
 te = Telugu
+tg = Tacikçe
 th = Tayca
 tr = Türkçe
 tt = Tatarca
+udm = Udmurtça
 uk = Ukraynaca
+ur = Urduca
 uz = Özbekçe
+vi = Vietnamca
+vot = Votic
 zh-CN = Çince (Çin)
 zh-HK = Çince (Hong Kong)
 zh-TW = Çince (Tayvan)
@@ -92,6 +126,7 @@ speak = Konuş
 speak-now = Şimdi konuşun
 datasets = Veri kümeleri
 languages = Diller
+about = Hakkında
 profile = Profil
 help = Yardım
 contact = İletişim
@@ -101,12 +136,10 @@ cookies = Çerezler
 faq = SSS
 content-license-text = İçerikler <licenseLink>Creative Commons lisansı</licenseLink> ile sunulmaktadır
 share-title = Sesini bağışlayacak birilerini bulmamıza yardım edin!
-share-text = Makinelere gerçek insanların nasıl konuştuğunu öğretin: { $link } ile sesinizi bağışlayın 
+share-text = Makinelere gerçek insanların nasıl konuştuğunu öğretin: { $link } ile sesinizi bağışlayın
 link-copied = Bağlantı kopyalandı
 back-top = Başa dön
-contribution-banner-text = Katkıda bulunabileceğiniz yeni bir arayüz deniyoruz
-contribution-banner-button = Bir göz atın
-report-bugs-link = Hataları rapor edin
+logout = Çıkış
 
 ## Home Page
 
@@ -115,6 +148,8 @@ home-cta = Konuşarak katkı sağla!
 wall-of-text-start = Ses doğaldır, insanidir. Bu yüzden makinelerimiz için kullanılabilir ses teknolojileri üretmekle ilgileniyoruz. Ama ses sistemleri yaratmak için çok büyük miktarlarda ses verisine ihtiyaç var.
 wall-of-text-more-mobile = Büyük şirketlerin kullandığı verilerin çoğu insanların çoğunluğunun kullanımına açık değil. Biz bunun yenileşmeyi bastırdığını düşünüyoruz. Bu yüzden ses tanıma sistemlerini herkese açık hale getirmek için Common Voice projesini başlattık.
 wall-of-text-more-desktop = Herkesin cihazlara ve web'e yönelik yenilikçi uygulamalar geliştirmede kullanabileceği, açık kaynaklı bir ses veritabanı oluşturmamıza yardımcı olmak için sesinizi bağışlayabilirsiniz.<lineBreak></lineBreak>Gerçek insanların nasıl konuştuğunu makinelere öğretmek için bir cümle okuyun. Kaliteyi artırmak için diğer gönüllülerin kayıtlarını kontrol edin. Bu kadar basit!
+wall-of-text-first = Ses doğaldır, insanidir. Bu yüzden makinelerimiz için kullanılabilir ses teknolojileri üretmekle ilgileniyoruz. Ama ses sistemleri yaratmak için geliştiricilerin çok büyük miktarlarda ses verisine ihtiyacı var.
+wall-of-text-second = Büyük şirketlerin kullandığı verilerin çoğu insanların çoğunluğunun kullanımına açık değil. Biz bunun yenileşmeyi bastırdığını düşünüyoruz. Bu yüzden ses tanıma sistemlerini herkese açık ve erişilebilir hale getirmek için Common Voice projesini başlattık.
 show-wall-of-text = Devamını oku
 help-us-title = Cümleleri doğrulamamıza yardım edin!
 help-us-explain = Oynatma tuşuna basıp dinleyin: Konuşmacı, aşağıdaki cümleyi doğru şekilde okumuş mu?
@@ -122,6 +157,57 @@ no-clips-to-validate = Bu dilde dinlenecek kayıt kalmadı. Yeni konuşmalar kay
 vote-yes = Evet
 vote-no = Hayır
 toggle-play-tooltip = Oynatma modunu açıp kapatmak için { shortcut-play-toggle } tuşuna basın
+speak-subtitle = Sesinizi bağışlayın
+speak-paragraph = Açık veri kümemizi oluşturmanın en önemli parçalarından biri ses kayıtları yapmak. İşin eğlenceli yanı da bu.
+speak-goal-text = Kaydedilen ses
+listen-subtitle = Sesleri doğrulamamıza yardım edin
+listen-paragraph = Common Voice için bağışlanan ses kayıtlarını doğrulamak da bir o kadar önemli. Kayıtları dinleyerek kaliteli ve açık kaynaklı ses verileri oluşturmamızı sağlayabilirsiniz.
+listen-goal-text = Doğrulanan ses
+hours-recorded = Kaydedilen saat
+hours-validated = Doğrulanan saat
+voices-online = Çevrimiçi ses sayısı
+todays-progress = Bugünkü ilerleme
+help-reach-goal = Bugünkü hedefimiz: { $goal }
+read-terms-q = Koşullarımızı okudunuz mu?
+ready-to-record = Sesinizi bağışlamaya hazır mısınız?
+all-locales = Tümü
+today = Bugün
+x-weeks-short =
+    { $count ->
+        [one] Hafta
+       *[other] { $count } hafta
+    }
+x-months-short =
+    { $count ->
+        [one] { $count } ay
+       *[other] { $count } ay
+    }
+x-years-short =
+    { $count ->
+        [one] { $count } yıl
+       *[other] { $count } yıl
+    }
+help-make-dataset = Kaliteli, herkese açık bir veri kümesi oluşturmamıza yardım edin
+profile-not-required = Katkıda bulunmak için profil oluşturmak zorunda değilsiniz ama oluşturmanın bazı faydaları var
+sign-up-account = Hesap açın
+email-subscription-title = e-posta haberlerine kaydolun
+
+## Account Benefits
+
+benefits = Yararları
+improve-audio = Profil bilgileri, konuşma tanıma doğruluğunu eğitirken kullanılan ses verilerini iyileştirir.
+keep-track = Farklı dillerdeki ilerleme durumunuzu ve ölçümlerinizi takip edebilirsiniz.
+compare-progress = Katkılarınızı dünyanın her yerindeki diğer gönüllülerle karşılaştırabilirsiniz.
+view-goals = Kişisel hedeflerinize ve proje hedeflerine ne kadar yaklaştığınızı görebilirsiniz.
+join-newsletter = İsterseniz e-posta listemize katılarak projeyle ilgili gelişmelerden haberdar olabilirsiniz.
+
+## What's public
+
+whats-public = Başkaları hangi bilgilerinizi görür?
+email-not-public = E-posta adresinizi hiç kimse göremez.
+recordings-and-locale-public = Yaptığınız kayıt sayısını ve katkıda bulunduğunuz dilleri başkaları görebilir.
+username-optin-public = Kullanıcı adınızı isterseniz gösterebilir isterseniz de anonim kalabilirsiniz.
+username-email-not-demographic = Kullanıcı adınız ve e-posta adresiniz, paylaşılan verilerle ilişkilendirilmeyecektir.
 
 ## Speak & Listen Shortcuts
 
@@ -147,6 +233,8 @@ shortcut-vote-no = h
 # Must be different from { shortcut-skip }, { shortcut-vote-yes } and { shortcut-vote-no }
 shortcut-record-toggle = k
 shortcut-record-toggle-label = Kaydet/Durdur
+shortcut-rerecord-toggle = [1-5]
+shortcut-rerecord-toggle-label = Yeniden kaydedin
 request-language-text = Dilinizi henüz Common Voice’ta göremiyor musunuz?
 request-language-button = Yeni dil iste
 
@@ -166,62 +254,96 @@ english = İngilizce
 
 ## ProfileForm
 
-profile-form-cancel = Formdan çık
-profile-form-delete = Profilimi sil
 profile-form-username =
     .label = Kullanıcı adı
-profile-form-language =
-    .label = Dil
+profile-form-native-language =
+    .label = Anadili
+profile-form-additional-language =
+    .label = Ek dil
 profile-form-accent =
     .label = Aksan
 profile-form-age =
     .label = Yaş
 profile-form-gender =
     .label = Cinsiyet
+leaderboard-visibility =
+    .label = Liderlik görünürlüğü
+hidden = Gizli
+visible = Görünür
+native-language =
+    .label = Anadili
 profile-form-submit-save = Kaydet
 profile-form-submit-saved = Kaydedildi
-profile-keep-data = Verileri tut
-profile-delete-data = Verileri sil
 male = Erkek
 female = Kadın
 # Gender
 other = Diğer
 why-profile-title = Neden profil oluşturmalıyım?
-why-profile-text = kendiniz hakkında biraz bilgiler verirseniz, Common Voice’a gönderdiğiniz ses verilerini doğruluk artırma amacıyla kullanan konuşma tanıma motorları için bu veriler daha yararlı olacaktır.
+why-profile-text = Kendiniz hakkında biraz bilgiler verirseniz, Common Voice’a gönderdiğiniz ses verilerini doğruluk artırma amacıyla kullanan konuşma tanıma motorları için bu veriler daha yararlı olacaktır.
+dashboard = Pano
+build-profile = Profil oluştur
+avatar = Avatar
+goals = Hedefler
+settings = Ayarlar
 edit-profile = Profili düzenle
-profile-create = Profil oluştur
 profile-create-success = Profil başarıyla oluşturuldu!
 profile-close = Kapat
-profile-clear-modal = Profil verilerinizi silerseniz bu demografik bilgiler artık ses kayıtlarınızla birlikte Common Voice'a gönderilmeyecektir.
 profile-explanation = Profil oluşturarak hem ilerlemenizi takip edebilir hem de ses verilerimizin daha verimli olmasını sağlayabilirsiniz.
+thanks-for-account = Hesabınızı onayladığınız için teşekkür ederiz. Şimdi profilinizi oluşturalım.
+why-demographic = Bu neden önemli?
+why-demographic-explanation = Yaş, cinsiyet ve aksan gibi anonim kullanıcı verileri, konuşma tanıma motorlarının doğruluğunu eğitmek için kullanılan ses verilerini geliştirmeye yardımcı olur. Kullanıcı adınız ve e-postanız gönderilen verilerinizle asla ilişkilendirilmez. Kullanıcı adınızın başkaları tarafından görünüp görünmeyeceğini de seçebilirsiniz.
+accept-privacy = Bu bilgilerin Mozilla’nın <privacyLink>Gizlilik Politikası</privacyLink>’nda açıklandığı şekilde kullanılmasını kabul ediyorum
+login-identity = Giriş kimliği
+login-signup = Giriş / Kayıt
+edit = Düzenle
+email-subscriptions = E-posta abonelikleri
+download-profile = Verilerimi indir
+contribution-experience = Katkı deneyimi
+skip-submission-feedback = Gönderim geri bildirimini atla
+skip-submission-description = Katkı gönderimi sırasında Gönder'e tıkladıktan sonra geri bildirim atlanır. Katkı, bir sonraki 5 kayıt veya doğrulama setiyle doğrudan devam edecektir.
+skip-submission-note = Not: Katkı türünü değiştirmek için Konuşma veya Dinleme arasında seçim yapmanız gerekecektir.
+off = Kapalı
+on = Açık
+add-avatar-title = Profilinize avatar ekleyin
+browse-file-title = Resim dosyası yükle
+browse-file = Sürükleyip bırak veya <browseWrap>göz at</browseWrap>
+connect-gravatar = Gravatar ile bağlan
+gravatar_not_found = E-postanıza ait gravatar bulunamadı
+file_too_large = Seçilen dosya çok büyük
+manage-subscriptions = Abonelikleri yönet
+email-already-used = Bu e-posta farklı bir hesapta zaten kullanılıyor
+add-language = Dil ekle
 
 ## FAQ
 
 faq-title = Sıkça Sorulan Sorular
-faq-what-q = Common Voice nedir?
-faq-what-a = Ses tanıma teknolojisi makinelerle iletişimimizde devrim yaratabilir ama mevcut sistemler pahalı ve sahipli. Common Voice, ses tanıma teknolojisini herkesin erişebileceği hale getirmeye yönelik bir proje. İnsanların bu büyük veritabanına bağışladığı sesler sayesinde herkes çabucak ve kolayca ses destekli uygulamaları eğitebilecek. Topladığımız tüm ses verileri geliştiricilere açık olacak.
-faq-important-q = Bu neden önemli?
-faq-important-a = Ses doğaldır, ses insancıldır. İletişim kurmanın en kolay ve en doğal yoludur. Biz, geliştiricilerin sesten yararlanarak gerçek zamanlı çevirmenlerden ses destekli asistanlara dek inanılmaz şeyler yapmalarını istiyoruz; oysa henüz bu tür uygulamaları oluşturmak için yeterince açık veri mevcut değil. Common Voice’un geliştiricilere ihtiyaç duydukları verileri sağlamasını umuyoruz.
-faq-get-q = Common Voice verilerini nasıl elde edebilirim?
-faq-get-a = Veri kümesi, <licenseLink>CC-0</licenseLink> lisansıyla <downloadLink>indirme sayfamızdan</downloadLink> indirilebilir durumda.
-faq-mission-q = Common Voice neden Mozilla misyonunun bir parçası?
-faq-mission-a = Mozilla, web’i herkes için açık ve erişilebilir tutmaya söz vermiştir. Bunu başarmak için web yapımcılarını Common Voice gibi projelerle güçlendirmeliyiz. Ses teknolojilerinin günlük hayatımıza girdiği günümüzde, bu teknolojilerin tüm kullanıcılara eşit şekilde hizmet etmeleri gerektiğine inanıyoruz. Ses teknolojilerini geliştirir ve test ederken daha fazla dil, aksan ve demografik çeşitliliğin kapsanması gerekiyor. Mozilla olarak biz, sağlıklı ve canlı bir internet görmek istiyoruz. Böyle bir internet için de geliştiricilere yeni, sıra dışı projeler inşa ederken kullanabilecekleri ses verileri sağlamamız gerekiyor. Common Voice, hem Mozilla çalışanlarına hem de dünyadaki tüm geliştiricilere yardımcı olacak, açık bir kaynak olacaktır.
-faq-native-q = Ana dili { $lang } olmayan ve aksanlı konuşan bir konuşmacıyım, yine de katkıda bulunmamı istiyor musunuz?
-faq-native-a = Evet, sesinizi kesinlikle istiyoruz. Common Voice'un bir amacı da olabildiğince fazla farklı aksanı toplamaktır, böylece bilgisayarlar <bold>herkesi</bold> konuştuklarında daha iyi anlayabilir.
-faq-firefox-q = Common Voice aracılığıyla konuşmayı metne dönüştürme özelliği Firefox’a eklenecek mi?
-faq-firefox-a = Common Voice’un potansiyeli çok büyük. Firefox dahil olmak üzere birçok Mozilla ürününde konuşma arayüzlerini nasıl kullanabileceğimizi planlama aşamasındayız.
-faq-quality-q = Kaydın kullanılabilmesi için gerekli olan kalite seviyesi nedir?
-faq-quality-a = Ses kalitesinin konuşmayı metne dönüştürme sisteminin (KMDS) göreceği şekilde olmasını istiyoruz. Bu nedenle çeşitlilik istiyoruz. Bu sayede KMDS'e değişik durumlarda söyleneni anlamasını öğretiyoruz.
-faq-hours-q = Neden 10.000 saatlik ses kaydetmeye çalışıyorsunuz?
-faq-hours-a = Bu süre, işe yarar bir STT (konuşmayı metne dönüştürme) sisteminin eğitilmesi için gereken yaklaşık süredir.
-faq-source-q = Kaynak metinler nereden geliyor?
-faq-source-a1 = Mevcut cümleler gönüllülerimizden ve <italic>It’s a Wonderful Life</italic> gibi telif hakkı sona ermiş filmlerdeki konuşmalardan geliyor.
-faq-source-a2 = Kaynak cümlelerimizi <dataLink>bu GitHub klasöründe</dataLink> bulabilirsiniz.
+faq-what-cv-q = Common Voice nedir?
+faq-why-important-q = Ne önemi var?
+faq-how-get-q = Common Voice verilerini nasıl indirebilirim?
+faq-when-release-q = Dil dillerdeki Common Voice verilerini ne zaman yayımlayacaksınız?
+faq-why-mission-q = Common Voice neden Mozilla misyonunun bir parçası?
+faq-what-cv-and-deepspeech-q = Deep Speech ile Common Voice arasındaki fark nedir?
+faq-why-different-speakers-q = Neden her dil için bu kadar fazla konuşmacıya ihtiyacınız var?
+faq-why-my-lang-q = Neden dilim henüz eklenmedi?
+faq-how-calc-hours-q = Common Voice saatleri nasıl hesaplıyor?
+faq-why-account-q = Neden hesap açayım?
+faq-is-account-public-q = Hesap bilgilerimi herkes görecek mi?
+faq-how-privacy-q = Seslerini bağışlayan kişilerin anonimliğini ve gizliliğini nasıl sağlıyorsunuz?
+faq-what-is-cv = Common Voice nedir?
 
-## Profile
+## ABOUT US
 
-profile-why-title = Neden profil oluşturmalıyım?
-profile-why-content = Kendiniz hakkında biraz bilgi verirseniz, Common Voice’a gönderdiğiniz ses verileri, doğruluğu artırmak için bu verileri kullanan Konuşma Tanıma motorlarının daha fazla işine yarayacaktır.
+about-nav-why-common-voice = Neden ?
+about-nav-how-it-works = Nasıl ?
+mycroft-title = Mycroft Ai
+
+## Glossary
+
+glossary = Sözlük
+localization = Yerelleştirme
+sentence-collection = Cümle derleme
+sst = Konuşmadan metne (STT)
+sst-explanation = Konuşmadan metne (STT) teknolojileri ses verilerini metne dönüştürür.
 
 ## NotFound
 
@@ -241,30 +363,10 @@ data-get-started = <speechBlogLink>Konuşma tanımayı keşfedin</speechBlogLink
 data-other-title = Diğer ses verisi kümeleri…
 data-other-goto = { $name } sitesine git
 data-other-download = Verileri indir
-data-other-librispeech-description = LibriSpeech, LibriVox projesinin sesli kitaplarından elde edilen yaklaşık 1000 saatlik 16 Khz'lik sesli okunmuş İngilizce metinlerden oluşan bir korpustur.
-data-other-ted-name = TED-LIUM Korpusu
-data-other-ted-description = TED-LIUM korpusu, TED web sitesindeki sunum ses kayıtları ve onların deşifre metinleri kullanılarak oluşturulmuştur. 
-data-other-voxforge-description = VoxForge, Özgür ve Açık Kaynaklı Konuşma Tanıma Motorları ile kullanım için okunmuş metinler toplamak üzere kuruldu.
-data-other-tatoeba-description = Tatoeba, dil öğrenmede kullanılmak üzere geniş bir cümle, çeviri ve konuşma veritabanıdır. Bu dosya, Tatoeba gönüllüleri tarafından kaydedilen İngilizce konuşmaları içerir.
 data-bundle-button = Veri kümesi paketini indir
 data-bundle-description = Common Voice verileri ve yukarıdaki diğer tüm ses veri kümeleri.
 license = Lisans: <licenseLink>{ $license }</licenseLink>
 license-mixed = Karma
-
-## Record Page
-
-record-platform-not-supported = Maalesef kullandığınız platform şu an desteklenmemektedir.
-record-platform-not-supported-desktop = Bilgisayarınızda şu tarayıcıların son sürümlerini kullanabilirsiniz:
-record-platform-not-supported-ios = <bold>iOS</bold> kullanıcıları bedava uygulamamızı indirebilir:
-record-must-allow-microphone = Mikrofon erişimine izin vermeniz gerekiyor.
-record-retry = Yeniden dene
-record-no-mic-found = Mikrofon bulunamadı.
-record-error-too-short = Kayıt çok kısa.
-record-error-too-long = Kayıt çok uzun.
-record-error-too-quiet = Bu kayıt çok sessiz oldu.
-record-submit-success = Gönderi tamamlandı! Yeni bir kayıt yapmak ister misiniz?
-record-help = Lütfen kayıt düğmesine bastıktan sonra yukarıdaki cümleyi yüksek sesle okuyun.
-record-cancel = Yeniden kaydetmeyi iptal et
 review-terms = Common Voice’u kullandığınızda <termsLink>Koşullarımızı</termsLink> ve <privacyLink>Gizlilik İlkelerimizi</privacyLink> kabul etmiş olursunuz.
 terms-agree = Kabul ediyorum
 terms-disagree = Kabul etmiyorum
@@ -276,6 +378,40 @@ review-rerecord = Yeniden kaydet
 review-cancel = Gönderimi iptal et
 review-keep-recordings = Kayıtları tut
 review-delete-recordings = Kayıtlarımı sil
+
+## Datasets Page
+
+language = Dil
+# File size in gigabytes
+size = Boyut
+validated-hr-total = Doğrulanmış toplam saat
+overall-hr-total = Genel toplam saat
+cv-license = Lisans
+audio-format = Ses biçimi
+number-of-voices = Ses sayısı
+splits = Ayrımlar
+email-to-download = İndirmek için e-postanızı yazın
+size-gigabyte = GB
+size-megabyte = MB
+download-language = { $language } indir
+validated-hours = Doğrulanmış saat
+recorded-hours = Kaydedilen saat
+whats-inside = Bu Common Voice veri kümesinde neler var?
+subscribe = Abone ol
+other-datasets = Diğer ses veri kümeleri
+feedback-q = Görüşleriniz mi var?
+data-other-librispeech-description = LibriSpeech, LibriVox projesinin sesli kitaplarından elde edilen yaklaşık 1000 saatlik 16 Khz'lik sesli okunmuş İngilizce metinlerden oluşan bir korpustur.
+data-other-ted-name = TED-LIUM Korpusu
+data-other-ted-description = TED-LIUM korpusu, TED web sitesindeki sunum ses kayıtları ve onların deşifre metinleri kullanılarak oluşturulmuştur.
+data-other-voxforge-description = VoxForge, Özgür ve Açık Kaynaklı Konuşma Tanıma Motorları ile kullanım için okunmuş metinler toplamak üzere kuruldu.
+data-other-tatoeba-description = Tatoeba, dil öğrenmede kullanılmak üzere geniş bir cümle, çeviri ve konuşma veritabanıdır. Bu dosya, Tatoeba gönüllüleri tarafından kaydedilen İngilizce konuşmaları içerir.
+go-discourse = Discourse'a git
+go-languages-page = Diller sayfasına git
+ready-to-validate = Cümleleri doğrulamaya hazır mısınız?
+more = Daha fazla
+close = Kapat
+download = İndir
+dataset-version = Sürüm
 
 ## Download Modal
 
@@ -303,13 +439,13 @@ request-language-form-language =
     .label = Dil
 request-language-success-title = Dil isteği başarıyla gönderildi. Teşekkür ederiz.
 request-language-success-content = Dilinizi Common Voice’a nasıl ekleyeceğiniz hakkında daha fazla bilgi vermek için yakında size ulaşacağız.
+select-language = Bir dil seçin...
+other-language = Başka bir dil
 
 ## Languages Overview
 
 language-section-in-progress = Devam ediyor
-language-section-in-progress-description = Devam eden diller, gönüllülerimiz tarafından katkıya açılmaya hazırlanmaktadır. İlerleme durumları, web sitesi çevirisinde ve cümle derlemede ne durumda olduklarını göstermektedir.
 language-section-launched = Yayımlandı
-language-section-launched-description = Bu dillerde web sitesinin çevirisi tamamlanmış ve sürmekte olan <italic>{ listen }</italic> ve <italic>{ speak }</italic> katkıları için yeterli sayıda cümle derlenmiştir.
 languages-show-more = Daha fazlasını göster
 languages-show-less = Daha az göster
 language-speakers = Konuşmacı
@@ -330,7 +466,7 @@ contribute = Katkıda bulun
 listen = Dinle
 skip = Atla
 shortcuts = Kısayollar
-clips = Klipler
+clips-with-count = <bold>{ $count }</bold> ses kaydı
 goal-help-recording = Common Voice'un günlük { $goalValue } kayıt hedefinin <goalPercentage></goalPercentage> kadarına ulaşmasına katkıda bulundunuz!
 goal-help-validation = Common Voice'un günlük { $goalValue } doğrulama hedefinin <goalPercentage></goalPercentage> kadarına ulaşmasına katkıda bulundunuz!
 contribute-more =
@@ -339,6 +475,15 @@ contribute-more =
        *[other] { $count } tane daha yapmaya hazır mısın?
     }
 record-cta = Kaydetmeye başla
+record-platform-not-supported = Maalesef kullandığınız platform şu an desteklenmemektedir.
+record-platform-not-supported-desktop = Bilgisayarınızda şu tarayıcıların son sürümlerini kullanabilirsiniz:
+record-platform-not-supported-ios = <bold>iOS</bold> kullanıcıları bedava uygulamamızı indirebilir:
+record-must-allow-microphone = Mikrofon erişimine izin vermeniz gerekiyor.
+record-no-mic-found = Mikrofon bulunamadı.
+record-error-too-short = Kayıt çok kısa.
+record-error-too-long = Kayıt çok uzun.
+record-error-too-quiet = Bu kayıt çok sessiz oldu.
+record-cancel = Yeniden kaydetmeyi iptal et
 record-instruction = <recordIcon></recordIcon> düğmesine { $actionType }, sonra cümleyi net bir şekilde okuyun
 record-stop-instruction = Bitirince { $actionType } <stopIcon></stopIcon>
 record-three-more-instruction = Üç tane kaldı!
@@ -362,3 +507,49 @@ listen-last-time-instruction = <playIcon></playIcon> Son bir tane!
 nothing-to-validate = Bu dilde doğrulanacak bir şey kalmamış. Kuyruğu doldurmamıza yardımcı olun.
 record-button-label = Sesinizi kaydedin
 share-title-new = Daha fazla ses bulmamıza <bold>yardım edin</bold>
+
+## Goals
+
+streaks = Seriler
+days =
+    { $count ->
+        [one] Gün
+       *[other] Gün
+    }
+recordings =
+    { $count ->
+        [one] Kayıt
+       *[other] Kayıt
+    }
+validations =
+    { $count ->
+        [one] Doğrulama
+       *[other] Doğrulama
+    }
+
+## Dashboard
+
+your-languages = Dilleriniz
+toward-next-goal = Sonraki hedef için kalan
+clips-you-recorded = ses kaydettiniz
+clips-you-validated = ses doğruladınız
+stats = İstatistikler
+you = Siz
+everyone = Herkes
+contribution-activity = Katkı Etkinliği
+top-contributors = En Çok Katkıda Bulunanlar
+recorded-clips = Kaydedilen ses
+validated-clips = Doğrulanan ses
+total-approved = Onaylanan toplam
+overall-accuracy = Genel doğruluk
+
+## Profile Delete
+
+keep = Tut
+remove = Sil
+remove-info = Ses kayıtlarınızı veri kümelerinden kaldırma isteğinizi inceleyeceğiz. İsteğiniz onaylanırsa, veri kümesini indirenlerle iletişim kuracak ve ses kayıtlarınızı kaldırmalarını isteyeceğiz.
+profile-form-delete = Profilimi sil
+
+## Landing
+
+profile-not-required = Katkıda bulunmak için profil oluşturmak zorunda değilsiniz ama oluşturmanın bazı faydaları var

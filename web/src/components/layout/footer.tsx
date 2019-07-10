@@ -1,134 +1,116 @@
 import * as React from 'react';
-import { Localized } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
+import { trackNav } from '../../services/tracker';
 import URLS from '../../urls';
-import ContactModal from '../contact-modal/contact-modal';
 import ShareButtons from '../share-buttons/share-buttons';
-import { LocaleLink } from '../locale-helpers';
 import {
   ContactIcon,
   DiscourseIcon,
-  SupportIcon,
   GithubIcon,
+  SupportIcon,
 } from '../ui/icons';
 import { TextButton } from '../ui/ui';
+import { LocaleLink, useLocale } from '../locale-helpers';
 import Logo from './logo';
+import SubscribeNewsletter from './subscribe-newsletter';
+import { ContactLink, DiscourseLink, GitHubLink } from '../shared/links';
 
 import './footer.css';
 
-interface FooterState {
-  showContactModal: boolean;
-}
+const LocalizedLocaleLink = ({ id, to }: { id: string; to: string }) => {
+  const [locale] = useLocale();
+  return (
+    <Localized id={id} onClick={() => trackNav(id, locale)}>
+      <LocaleLink to={to} />
+    </Localized>
+  );
+};
 
-class Footer extends React.PureComponent<{}, FooterState> {
-  private shareURLInput: HTMLInputElement;
-
-  state: FooterState = {
-    showContactModal: false,
-  };
-
-  private toggleContactModal = () => {
-    this.setState(state => ({ showContactModal: !state.showContactModal }));
-  };
-
-  render() {
-    return (
-      <footer>
-        {this.state.showContactModal && (
-          <ContactModal onRequestClose={this.toggleContactModal} />
-        )}
-        <div id="help-links">
-          <LocaleLink id="help" to={URLS.FAQ}>
-            <SupportIcon />
-            <Localized id="help">
-              <div />
-            </Localized>
-          </LocaleLink>
-          <div className="divider" />
-          <a
-            id="contribute"
-            target="_blank"
-            href="https://github.com/mozilla/voice-web">
-            <GithubIcon />
-            <div>GitHub</div>
-          </a>
-          <div className="divider" />
-          <a
-            id="discourse"
-            target="blank"
-            href="https://discourse.mozilla-community.org/c/voice">
-            <DiscourseIcon />
-            <div>Discourse</div>
-          </a>
-          <div className="divider" />
-          <TextButton onClick={this.toggleContactModal}>
-            <ContactIcon />
-            <Localized id="contact">
-              <div />
-            </Localized>
-          </TextButton>
-        </div>
-        <div id="moz-links">
-          <div className="logo-container">
-            <Logo reverse />
-            <p className="license">
-              <Localized
-                id="content-license-text"
-                licenseLink={
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.mozilla.org/en-US/foundation/licensing/website-content/"
-                  />
-                }>
-                <span />
-              </Localized>
-            </p>
-          </div>
-          <div className="links">
-            <div>
-              <Localized id="privacy">
-                <LocaleLink to={URLS.PRIVACY} />
-              </Localized>
-              <Localized id="terms">
-                <LocaleLink to={URLS.TERMS} />
-              </Localized>
-            </div>
-            <div>
-              <Localized id="cookies">
+export default React.memo(() => {
+  const [locale] = useLocale();
+  return (
+    <footer>
+      <div id="help-links">
+        <LocaleLink id="help" to={URLS.FAQ}>
+          <SupportIcon />
+          <Localized id="help" onClick={() => trackNav('help', locale)}>
+            <div />
+          </Localized>
+        </LocaleLink>
+        <div className="divider" />
+        <GitHubLink id="contribute">
+          <GithubIcon />
+          <div>GitHub</div>
+        </GitHubLink>
+        <div className="divider" />
+        <DiscourseLink id="discourse">
+          <DiscourseIcon />
+          <div>Discourse</div>
+        </DiscourseLink>
+        <div className="divider" />
+        <ContactLink>
+          <ContactIcon />
+          <Localized id="contact">
+            <div />
+          </Localized>
+        </ContactLink>
+      </div>
+      <div id="moz-links">
+        <div className="logo-container">
+          <Logo reverse />
+          <p className="license">
+            <Localized
+              id="content-license-text"
+              licenseLink={
                 <a
                   target="_blank"
-                  href="https://www.mozilla.org/en-US/privacy/websites/#cookies"
+                  rel="noopener noreferrer"
+                  href="https://www.mozilla.org/en-US/foundation/licensing/website-content/"
                 />
-              </Localized>
-              <Localized id="faq">
-                <LocaleLink to={URLS.FAQ}>FAQ</LocaleLink>
-              </Localized>
-            </div>
-          </div>
-          <div id="sharing">
-            <Localized id="share-title">
-              <span className="title" />
+              }>
+              <span />
             </Localized>
-
-            <div className="icons">
-              <ShareButtons />
-            </div>
-          </div>
-          <Localized id="back-top">
-            <TextButton
-              className="back-top"
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
-              }}
-            />
-          </Localized>
+          </p>
         </div>
-      </footer>
-    );
-  }
-}
+        <div className="links">
+          <div>
+            <LocalizedLocaleLink id="privacy" to={URLS.PRIVACY} />
+            <LocalizedLocaleLink id="terms" to={URLS.TERMS} />
+          </div>
+          <div>
+            <Localized id="cookies">
+              <a
+                target="_blank"
+                href="https://www.mozilla.org/en-US/privacy/websites/#cookies"
+              />
+            </Localized>
+            <LocalizedLocaleLink id="faq" to={URLS.FAQ} />
+          </div>
+        </div>
 
-export default Footer;
+        <div id="sharing">
+          <Localized id="share-title">
+            <span className="title" />
+          </Localized>
+
+          <div className="icons">
+            <ShareButtons />
+          </div>
+        </div>
+
+        <div id="email-subscription">
+          <SubscribeNewsletter />
+        </div>
+
+        <Localized id="back-top">
+          <TextButton
+            className="back-top"
+            onClick={() => {
+              document.getElementById('scroller').scrollTop = 0;
+            }}
+          />
+        </Localized>
+      </div>
+    </footer>
+  );
+});

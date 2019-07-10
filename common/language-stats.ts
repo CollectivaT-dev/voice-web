@@ -1,8 +1,5 @@
 export type BaseLanguage = {
-  locale: {
-    code: string;
-    name: string;
-  };
+  locale: string;
 };
 
 export type InProgressLanguage = BaseLanguage & {
@@ -11,7 +8,7 @@ export type InProgressLanguage = BaseLanguage & {
 };
 
 export type LaunchedLanguage = BaseLanguage & {
-  hours: number;
+  seconds: number;
   speakers: number;
 };
 

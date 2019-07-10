@@ -8,6 +8,8 @@ email-input =
     .label = E-mailová adresa
 submit-form-action = Odoslať
 loading = Načítava sa…
+email-opt-in-privacy = Rozhodnutím prijímať e-maily potvrdzujete svoj súhlas so spracovaním vašich údajov tak, ako je to popísané v <privacyLink>zásadách ochrany súkromia<privacyLink>.
+indicates-required = * označuje povinné pole
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -15,11 +17,17 @@ loading = Načítava sa…
 
 ## Languages
 
+ab = abcházština
+ace = acehčina
+ady = adygejčina
+af = afrikánčina
+am = amharčina
 an = aragónčina
 ar = arabčina
 as = asámčina
 ast = astúrčina
 az = azerbajdžančina
+bg = bulharčina
 bn = bengálčina
 br = bretónčina
 bxr = buriatčina
@@ -32,17 +40,24 @@ cy = waleština
 da = dánčina
 de = nemčina
 dsb = dolnolužická srbčina
+dv = maldivčina
 el = gréčtina
 en = angličtina
 eo = esperanto
 es = španielčina
 et = estónčina
+eu = baskičtina
+fa = perzština
 fi = fínčina
 fo = faerčina
 fr = francúzština
 fy-NL = frízština
 ga-IE = írčina
+gl = galícijčina
+ha = hauština
 he = hebrejčina
+hi-IN = hindčina
+hr = chorvátčina
 hsb = hornolužická srbčina
 hu = maďarčina
 ia = interlingua
@@ -55,21 +70,34 @@ kab = kabylčina
 kk = kazaština
 ko = kórejčina
 kpv = komi-zyriančina
+ku = kurdčina
 kw = kornčina
 ky = kirgizština
+lij = ligúrčina
+lt = litovčina
+lv = lotyština
+mdf = mokša
+mhr = lúčnovýchodná marijčina
 mk = macedónčina
+ml = malajálamčina
+mn = mongolčina
+mrj = hornomarijská marijčina
 myv = erzya
 nb-NO = nórčina (bokmål)
 ne-NP = nepálčina
 nl = holandčina
 nn-NO = nórčina (nynorsk)
+oc = okcitánčina
 or = urijčina
 pl = poľština
 pt-BR = portugalčina (Brazília)
-rm = rétorománčina
+rm-sursilv = rétorománčina (sursilvan)
 ro = rumunčina
 ru = ruština
+rw = rwandčina
 sah = jakutčina
+sc = sardínčina
+si = sinhalčina
 sk = slovenčina
 sl = slovinčina
 sq = albánčina
@@ -77,12 +105,16 @@ sr = srbčina
 sv-SE = švédčina
 ta = tamilčina
 te = telugčina
+tg = tadžičtina
 th = thajčina
 tr = turečtina
 tt = tatárčina
+udm = udmurtčina
 uk = ukrajinčina
 ur = urdčina
 uz = uzbečtina
+vi = vietnamčina
+vot = vodčina
 zh-CN = čínština (Čína)
 zh-HK = čínština (Hongkong)
 zh-TW = čínština (Taiwan)
@@ -96,6 +128,7 @@ speak = Hovorte
 speak-now = Hovorte teraz
 datasets = Datasety
 languages = Jazyky
+about = O nás
 profile = Profil
 help = Pomocník
 contact = Kontakt
@@ -108,9 +141,7 @@ share-title = Pomôžte nám nájsť ďalších, ktorí prispejú svojím hlasom
 share-text = Pomôžte strojom pochopiť ľudskú reč. Prispejte svojím hlasom na { $link }
 link-copied = Odkaz bol skopírovaný
 back-top = Návrat hore
-contribution-banner-text = Práve sme spustili nové prostredie pre prispievateľov
-contribution-banner-button = Pozrite sa naň
-report-bugs-link = Nahláste nám chyby
+logout = Odhlásiť sa
 
 ## Home Page
 
@@ -126,6 +157,12 @@ wall-of-text-more-desktop =
     použiť ktokoľvek na tvorbu inovatívnych aplikácií pre zariadenia a pre web.<lineBreak></lineBreak>
     Čítajte vety a pomôžte strojom naučiť sa, ako hovoria skutoční ľudia. Skontrolujte prácu ďalších
     dobrovoľníkov a vylepšite jej kvalitu. Je to také jednoduché!
+wall-of-text-first =
+    Reč je prirodzená a ľudská. Preto chceme vytvoriť použiteľnú technológiu rozpoznávania reči 
+    pre naše stroje. by sme ju však mohli vytvoriť, potrebujeme veľké množstvo hlasových údajov.
+wall-of-text-second =
+    Väčšina údajov, ktoré používajú veľké spoločnosti nie je dostupná pre väčšinu ľudí. Myslíme si, že to zdržuje inovácie.
+    Preto sme spustili Common Voice, projekt, ktorý sprístupní rozpoznávanie reči pre všetkých.
 show-wall-of-text = Prečítajte si viac
 help-us-title = Pomôžte nám overovať vety!
 help-us-explain = Kliknite na prehrať, počúvajte a povedzte nám, či sa nahrávka zhoduje s vetou nižšie.
@@ -133,6 +170,57 @@ no-clips-to-validate = Vyzerá to tak, že vo vašom jazyku nie sú k dispozíci
 vote-yes = Áno
 vote-no = Nie
 toggle-play-tooltip = Stlačením { shortcut-play-toggle } spustíte režim prehrávania
+speak-subtitle = Prispejte svojim hlasom
+speak-paragraph = Nahrávanie klipov je neoddeliteľnou súčasťou budovania našich otvorených datasetov. Podľa niektorých je to práve tá zábavnejšia časť.
+speak-goal-text = Počet nahrávok
+listen-subtitle = Pomôžte nám s overením
+listen-paragraph = Overovanie nahrávok je rovnako dôležitou súčasťou misie Common Voice. Vypočujte si ich a pomôžte nám vytvoriť kvalitnú databázu.
+listen-goal-text = Počet overených nahrávok
+hours-recorded = Počet nahraných hodín
+hours-validated = Počet overených hodín
+voices-online = Aktívne hlasy
+todays-progress = Dnešný pokrok
+help-reach-goal = Pomôžte nám dostať sa na { $goal }
+read-terms-q = Čítali ste naše podmienky používania?
+ready-to-record = Ste pripravení darovať svoj hlas?
+all-locales = Všetky
+today = Dnes
+x-weeks-short =
+    { $count ->
+        [one] Týždeň
+        [few] { $count } týž.
+       *[other] { $count } týž.
+    }
+x-months-short =
+    { $count ->
+        [one] { $count } mes.
+        [few] { $count } mes.
+       *[other] { $count } mes.
+    }
+x-years-short =
+    { $count ->
+        [one] { $count } rok
+        [few] { $count } roky
+       *[other] { $count } rokov
+    }
+help-make-dataset = Pomôžte nám vytvoriť vysokokvalitnú a verejne prístupnú databázu
+profile-not-required = Profil nie je nutnosťou, no môže byť užitočný
+
+## Account Benefits
+
+benefits = Výhody
+rich-data = Obohaťte odoslané dáta poskytnutím niektorých anonymných demografických údajov. Pred zverejnením všetky demografické údaje de-identifikujeme.
+improve-audio = Profilové informácie zlepšujú zvukové dáta používané pri tréningu presnosti rozpoznávania reči.
+compare-progress = Porovnajte sa s ostatnými prispievateľmi z celého sveta.
+
+## What's public
+
+whats-public = Čo všetko zverejňujeme?
+email-not-public = Vašu e-mailovú adresu nezverejňujeme.
+recordings-and-locale-public = Počet nahrávok a jazyky, do ktorých prispievate, budú verejné.
+username-optin-public = Môžete si vybrať, či bude vaše používateľské meno verejné alebo anonymné.
+demographic-deidentified = Dobrovoľne poskytnuté demografické údaje (vek, pohlavie a prízvuk) sú anonymizované a nikdy nebudú zverejnené na vašom profile.
+username-email-not-demographic = Vaše používateľské meno a e-mailová adresa nebudú nijakým spôsobom prepojené s uverejnenými údajmi.
 
 ## Speak & Listen Shortcuts
 
@@ -158,6 +246,8 @@ shortcut-vote-no = n
 # Must be different from { shortcut-skip }, { shortcut-vote-yes } and { shortcut-vote-no }
 shortcut-record-toggle = r
 shortcut-record-toggle-label = Nahrať/zastaviť
+shortcut-rerecord-toggle = [1-5]
+shortcut-rerecord-toggle-label = Nahrať klip nanovo
 request-language-text = Nevidíte na Common Voice svoj jazyk?
 request-language-button = Požiadajte o jazyk
 
@@ -178,62 +268,114 @@ english = Angličtina
 
 ## ProfileForm
 
-profile-form-cancel = Zavrieť formulár
-profile-form-delete = Odstrániť profil
 profile-form-username =
     .label = Používateľské meno
-profile-form-language =
-    .label = Jazyk
+profile-form-native-language =
+    .label = Materinský jazyk
+profile-form-additional-language =
+    .label = Ďalší jazyk
 profile-form-accent =
     .label = Prízvuk
 profile-form-age =
     .label = Vek
 profile-form-gender =
     .label = Pohlavie
+leaderboard-visibility =
+    .label = Viditeľnosť v rebríčku
+native-language =
+    .label = Materinský jazyk
 profile-form-submit-save = Uložiť
 profile-form-submit-saved = Uložený
-profile-keep-data = Ponechať údaje
-profile-delete-data = Odstrániť údaje
 male = Muž
 female = Žena
 # Gender
 other = Iné
 why-profile-title = Prečo chcete profil?
 why-profile-text = Tým, že nám o sebe poskytnete nejaké informácie, budú údaje, ktoré odošlete do Common Voice, užitočnejšie pre systémy rozpoznávania reči, ktoré tieto údaje využívajú na zvýšenie presnosti.
+dashboard = Nástenka
+build-profile = Vytvorenie profilu
+avatar = Avatar
+goals = Ciele
+settings = Nastavenia
 edit-profile = Upraviť profil
-profile-create = Vytvorenie profilu
 profile-create-success = Profil bol úspešne vytvorený!
 profile-close = Zavrieť
-profile-clear-modal = Odstránenie údajov profilu znamená, že tieto demografické údaje už nebudú naďalej odosielané s vašimi nahrávkami.
 profile-explanation = Sledujte svoj pokrok pomocou profilu a pomôžte nám spresniť naše hlasové údaje.
+thanks-for-account = Ďakujeme za potvrdenie vášho účtu, poďme vytvoriť váš profil.
+why-demographic = Prečo na tom záleží?
+why-demographic-explanation = Anonymizované údaje, ako vek, pohlavie a prízvuk pomáhajú vylepšovať naše údaje, ktoré budú použité na trénovanie systémov rozpoznávania reči. Vaše používateľské meno a e-mailová adresa nebudú nikdy spojené s odoslanými údajmi a môžete si vybrať, či chcete svoje používateľské meno zverejniť alebo nie.
+accept-privacy = Súhlasím so spracovaním týchto údajov tak, ako je to popísané v <privacyLink>zásadách ochrany súkromia</privacyLink>
+login-identity = Identita pre prihlásenie
+login-signup = Prihlásenie/registrácia
+edit = Upraviť
+email-subscriptions = Odbery pomocou e-mailu
+download-profile = Prevziať moje údaje
+contribution-experience = Používateľský zážitok
+skip-submission-feedback = Preskočiť spätnú väzbu
+off = Vypnutá
+on = Zapnutá
+add-avatar-title = Pridajte do svojho profilu avatara
+browse-file-title = Nahrať obrázok
+connect-gravatar = Prepojiť so službou Gravatar
+gravatar_not_found = Pre vašu e-mailovú adresu nebol nájdený žiadny gravatar
+file_too_large = Vybraný súbor je príliš veľký
+manage-subscriptions = Spravovať odbery
+email-already-used = E-mailová adresa sa už používa pre iný účet
+add-language = Pridať jazyk
 
 ## FAQ
 
 faq-title = Často kladené otázky
-faq-what-q = Čo je Common Voice?
-faq-what-a = Technológie rozpoznávania reči by mohli priniesť revolúciu v tom, akým spôsobom komunikujeme so strojmi. Súčasné systémy sú však drahé a uzatvorené. Common Voice je projekt, ktorý robí z rozpoznávania reči technológiu dostupnú pre všetkých. Ľudia darujú svoje hlasy do obrovskej databázy, ktorá umožní komukoľvek rýchlo a jednoducho vytrénovať aplikácie v oblasti rozpoznávania reči. Všetky hlasové údaje budú dostupné pre vývojárov.
-faq-important-q = Prečo je to dôležité?
-faq-important-a = Reč je prirodzená a ľudská. Je to najjednoduchšia a najprirodzenejšia forma komunikácie. Chceme umožniť vývojárom, tvoriť úžasné veci - od prekladačov v reálnom čase až po hlasových asistentov. V súčasnosti však nie je k dispozícii dostatok verejne dostupných údajov na to, aby takéto aplikácie mohli vzniknúť. Dúfame, že Common Voice dá vývojárom to, čo na inovácie potrebujú.
-faq-get-q = Ako môžem získať údaje z Common Voice?
-faq-get-a = Dataset je k dispozícii na <downloadLink>tejto stránke</downloadLink> v rámci licencie <licenseLink>CC-0</licenseLink>.
-faq-mission-q = Prečo je Common Voice súčasťou misie Mozilly?
-faq-mission-a = Mozilla je odhodlaná udržať web otvorený a prístupný pre všetkých. Aby sme to mohli robiť, potrebujeme podporovať tvorcov webu pomocou projektov, ako napríklad Common Voice. Keďže sa technológie rozpoznávania reči dostávajú do čoraz viac aplikácií, veríme, že by mali slúžiť rovnako dobre všetkým používateľom. Vidíme potrebu zahrnúť pri tvorbe a testovaní technológii na rozpoznávanie reči ďalšie jazyky, prízvuky a skupiny ľudí. Mozilla chce vidieť zdravý a energický internet. Za týmto účelom chce poskytnúť novým tvorcom prístup k hlasovým údajom - aby mohli tvoriť nové, mimoriadne projekty. Common Voice bude verejný zdroj, ktorý pomôže tímom Mozilly a vývojárom po celom svete.
-faq-native-q = { $lang } nie je môj materinský jazyk a hovorím s prízvukom, chcete môj hlas aj tak?
-faq-native-a = Áno, určite chceme váš hlas! Súčasťou cieľov projektu Common Voice je zozbierať čo najviac prízvukov, aby tak počítače mohli lepšie rozumieť <bold>každému</bold>.
-faq-firefox-q = Bude prevod reči na text prostredníctvom Common Voice niekedy súčasťou Firefoxu?
-faq-firefox-a = Common Voice má neobmedzený potenciál a my skúmame hlasové rozhranie v mnohých produktoch Mozilly, vrátane Firefoxu.
-faq-quality-q = Aká je potrebná kvalita zvuku na to, aby bol použiteľný?
-faq-quality-a = Chceme zvuk v takej kvalite, ktorá zodpovedá kvalite, s ktorou sa bude systém prevodu reči na text bežne stretávať. To znamená, že chceme rôznu kvalitu. Toto naučí systém prevodu reči na text poradiť si s rôznymi situáciami - hlasy v pozadí, hluk áut, hluk vetrákov - a to bez chýb.
-faq-hours-q = Prečo je 10 000 hodín cieľom pre záznam zvuku?
-faq-hours-a = Je to približný počet hodín potrebných na natrénovanie produkčného systému prevodu reči na text.
-faq-source-q = Odkiaľ pochádza zdrojový text?
-faq-source-a1 = Súčasné vety pochádzajú z darov prispievateľov a z dialógov verejných filmových scenárov, ako napríklad <italic>Život je krásny.</italic>
-faq-source-a2 = Zdrojové vety si môžete pozrieť v <dataLink>tomto priečinku na GitHube</dataLink>.
+faq-what-cv-q = Čo je Common Voice?
+faq-what-cv-a =
+    Technológia rozpoznávania hlasu je revolúciou v spôsobe, akým pracujeme so strojmi, ale v súčasnosti dostupné systémy sú drahé a proprietárne. Common Voice je súčasťou iniciatívy Mozilly, aby technológie rozpoznávania hlasu boli lepšie a dostupnejšie pre každého. Common Voice je masívna globálna databáza darovaných hlasov, ktorá umožňuje komukoľvek ľahko a rýchlo trénovať aplikácie podporujúce hlas, potenciálne v každom jazyku.¶
+    ¶
+    Zhromažďujeme hlasové vzorky nielen pre najpoužívanejšie jazyky, ale aj pre jazyky s menšou populáciou hovoriacich. Publikovanie rôznorodého súboru hlasov umožní vývojárom, podnikateľom a komunitám aby túto medzeru riešili sami. Popri dátovom súbore Common Voice taktiež budujeme aj open source nástroj na rozpoznávanie reči s názvom Deep Speech.
+faq-why-important-q = Prečo je to dôležité?
+faq-why-important-a =
+    Reč je často najprirodzenejším spôsobom, akým navzájom komunikujeme, a hlasové technológie prinášajú toto pohodlie do našich počítačov a mobilných zariadení. Chceme umožniť vývojárom vybudovať úžasné aplikácie na rozpoznávanie hlasu, ako sú prekladatelia v reálnom čase a hlasom ovládaní digitálni asistenti. Ale práve teraz je väčšina hlasových dát potrebných na vybudovanie takýchto aplikácií drahá a proprietárna. Dúfame, že dátový súbor Common Voice poskytne vývojárom to, čo potrebujú na inováciu a sprístupnenie technológie reči v ich vlastnom jazyku.¶
+    ¶
+    Aby sa rozpoznávanie hlasu stalo ešte univerzálnejším, zhromažďujeme hlasové vzorky v často hovorených jazykoch, rovnako ako v jazykoch s menším počtom hovoriacich, ktorí sú často prehliadaní komerčnými službami rozpoznávania reči. Publikovanie rôznorodého súboru hlasov umožní vývojárom, podnikateľom a celým rečovým komunitám vyriešiť túto medzeru .
+faq-how-get-q = Ako môžem získať údaje služby Common Voice?
+faq-how-get-a = Dataset služby Common Voice je dostupný na prevzatie v rámci licencie <licenseLink>CC0</licenseLink> na <datasetLink>stránke našich datasetov</datasetLink>. Z tej istej stránky si taktiež môžete prevziať niekoľko ďalších verejne dostupných datasetov.
+faq-when-release-q = Kedy uverejníte údaje projektu Common Voice aj v ďalších jazykoch?
+faq-when-release-a = Viacjazyčná verzia Common Voice datasetu v súčastnosti prechádza čistením a spájaním. Ak sa chcete dozvedieť viac o tom, ako podporiť toto úsilie, prosím, <contactLink>kontaktujte nás</contactLink>. Momentálne plánujeme dátum vydania na január 2019. Po tomto dátume budeme pravidelne aktualizovať dataset novými jazykmi a hlasovými klipmi, keď budú k dispozícii. Frekvencia pravidelného vydavateľského cyklu ešte stále nie je určená.
+faq-why-mission-q = Prečo je projekt Common Voice súčasťou misie Mozilly?
+faq-what-cv-and-deepspeech-q = Aký je rozdiel medzi projektami Common Voice a Deep Speech?
+faq-what-cv-and-deepspeech-a = Dataset Common Voice dopĺňa open-source systém rozpoznávania hlasu Deep Speech spoločnosti Mozilla. Prvá verzia systému Deep Speech bola vydaná v novembri 2017 a odvtedy sa neustále vyvíja. Veríme, že táto open-source technológia rozpoznávania hlasu, spoločne s datasetom Common Voice, by mala byť dostupná pre každého. Dúfame, že tieto technológie umožnia vývojárom vybudovať vlnu inovatívnych produktov a služieb.
+faq-is-goal-assistant-q = Je cieľom projektu Common Voice vytvorenie hlasového asistenta?
+faq-is-goal-assistant-a = Cieľom datasetu Common Voice je umožniť komukoľvek na svete vytvárať aplikácie využívajúce rozpoznávanie reči, hovoriaceho alebo akékoľvek spracovanie hlasových údajov. Hlasový asistent je len jedným z mnohých typov aplikácií, na ktoré môžete použiť tento dataset.
+faq-why-my-lang-q = Prečo môj jazyk zatiaľ nie je zahrnutý?
+faq-what-quality-q = Aká kvalita zvuku je potrebná na použitie hlasového klipu v datasete?
+faq-what-quality-a = Chceme, aby dataset Common Voice odrážal kvalitu zvuku, ktorú bude systém prevodu reči na text počuť v teréne, takže hľadáme rozmanitosť. Okrem rôznorodej komunity hovoriacich, dataset s rôznou kvalitou zvuku naučí systém prevodu reči na text zvládať rôzne situácie v reálnom svete, od rozhovoru v pozadí až po hluk z auta. Pokiaľ je váš hlasový klip zrozumiteľný, mal by byť pre dataset dostatočne dobrý.
+faq-how-calc-hours-q = Ako projekt Common Voice počíta nahrané hodiny?
+faq-how-calc-hours-a = Hodiny počítame odhadom priemernej dĺžky každého záznamu, ktorú potom vynásobíme celkovým počtom záznamov vo všetkých jazykoch.
+faq-where-src-from-2-q = Odkiaľ pochádza zdrojový text?
+faq-why-not-ask-read-a = Aby bol Common Voice dataset čo najužitočnejší, rozhodli sme sa prijímať len zdrojové texty dostupné pod licenciou Creative Commons (CC0). Použitie štandardu CC0 znamená, že je ťažšie nájsť a zozbierať zdrojový text, ale umožní komukoľvek použiť výsledné hlasové údaje bez obmedzení alebo povolení od Mozilly. V konečnom dôsledku chceme vytvoriť čo najužitočnejší mnohojazyčný dataset pre každého, vrátane vedcov, univerzít, startupov, vlád, sociálnych organizácii a hobbistov.
+faq-is-account-public-q = Sú informácie o mojom účte verejne prístupné?
+faq-how-privacy-a = Všetky hlasové klipy v datasete sú očistené od osobne identifikujúcich údajov . Keď prispievateľ poskytne demografické údaje prostredníctvom svojho profilu, tieto informácie sa de-identifikujú od jeho hlasových klipov predtým, než sa pridajú do datasetu na stiahnutie a nikdy sa na profilovej stránke nezverejnia.
+faq-what-determine-identity-q = Čo to znamená, že nemôžem „určiť identitu“ rečníkov v datasete Common Voice?
+faq-what-is-cv = Čo je Common Voice?
+faq-description = Projekt Common Voice je súčasťou iniciatívy Mozilly, ktorá pomáha strojom učiť sa, ako rozprávajú skutoční ľudia.
 
-## Profile
+## ABOUT US
 
-profile-why-title = Prečo potrebujete profil?
-profile-why-content = Tým, že nám o sebe poskytnete nejaké informácie, budú údaje, ktoré odošlete do Common Voice, užitočnejšie pre systémy rozpoznávania reči, ktoré tieto údaje využívajú na zvýšenie presnosti.
+about-title = Prečo Common Voice?
+about-clip-graveyard = Clip Graveyard
+about-partners = Partneri
+about-become-a-partner = Staňte sa partnerom
+about-get-involved = Zapojte sa
+about-nav-why-common-voice = Prečo?
+about-nav-how-it-works = Ako?
+about-nav-partners = Partneri
+about-nav-get-involved = Zapojte sa
+mycroft-title = Mycroft Ai
+
+## Glossary
+
+glossary = Slovník
+localization = Lokalizácia
+sentence-collection = Zber viet
 
 ## NotFound
 
@@ -253,30 +395,10 @@ data-get-started = <speechBlogLink>Začíname s rozpoznávaním reči</speechBlo
 data-other-title = Ďalšie hlasové datasety…
 data-other-goto = Prejsť na { $name }
 data-other-download = Prevziať údaje
-data-other-librispeech-description = LibriSpeech je korpus približne 1 000 hodín 16 kHz čítanej angličtiny odvodený z audiokníh z projektu LibriVox.
-data-other-ted-name = Korpus TED-LIUM
-data-other-ted-description = Korpus TED-LIUM je tvorený zvukovými nahrávkami prednášok a ich prepismi dostupnými na webovej stránke TED.
-data-other-voxforge-description = VoxForge bol vytvorený za účelom zberu prepísanej reči na použitie vo voľne dostupných, open source systémoch rozpoznávania reči.
-data-other-tatoeba-description = Tatoeba je rozsiahla databáza viet, prekladov a hovoreného slova pre použitie pri štúdiu jazykov. Obsahuje hovorenú angličtinu nahranú jej komunitou.
 data-bundle-button = Prevziať balík datasetov
 data-bundle-description = Common Voice a údaje všetkých ostatných hlasových datasetov vyššie.
 license = Licencia: <licenseLink>{ $license }</licenseLink>
 license-mixed = Zmiešaná
-
-## Record Page
-
-record-platform-not-supported = Ospravedlňujeme sa, no vaša platforma zatiaľ nie je podporovaná.
-record-platform-not-supported-desktop = Na počítačoch si môžete prevziať najnovšie:
-record-platform-not-supported-ios = Používatelia <bold>iOS</bold> si môžu prevziať našu bezplatnú aplikáciu:
-record-must-allow-microphone = Musíte povoliť prístup ku mikrofónu.
-record-retry = Znova
-record-no-mic-found = Nenašiel sa žiadny mikrofón.
-record-error-too-short = Vaša nahrávka bola príliš krátka.
-record-error-too-long = Vaša nahrávka bola príliš dlhá.
-record-error-too-quiet = Vaša nahrávka bola príliš tichá.
-record-submit-success = Odoslanie bolo úspešné! Chcete nahrávať znova?
-record-help = Prosím, ťuknite na tlačidlo nahrávania a potom prečítajte vetu vyššie.
-record-cancel = Zrušiť opakovaný záznam
 review-terms = Používaním Common Voice súhlasíte s našimi <termsLink>podmienkami</termsLink> a <privacyLink>zásadami ochrany súkromia</privacyLink>
 terms-agree = Súhlasím
 terms-disagree = Nesúhlasím
@@ -288,6 +410,33 @@ review-rerecord = Nahrať znova
 review-cancel = Zrušiť odoslanie
 review-keep-recordings = Ponechať nahrávky
 review-delete-recordings = Odstrániť moje nahrávky
+
+## New Datasets Page
+
+language = Jazyk
+# File size in gigabytes
+size = Veľkosť
+cv-license = Licencia
+audio-format = Formát zvuku
+email-to-download = Pre prevzatie zadajte svoju e-mailovú adresu
+size-gigabyte = GB
+size-megabyte = MB
+download-language = Prevziať jazyk { $language }
+subscribe = Odoberať
+feedback-q = Máte spätnú väzbu?
+data-other-librispeech-description = LibriSpeech je korpus približne 1 000 hodín 16 kHz čítanej angličtiny odvodený z audiokníh z projektu LibriVox.
+data-other-ted-name = Korpus TED-LIUM
+data-other-ted-description = Korpus TED-LIUM je tvorený zvukovými nahrávkami prednášok a ich prepismi dostupnými na webovej stránke TED.
+data-other-voxforge-description = VoxForge bol vytvorený za účelom zberu prepísanej reči na použitie vo voľne dostupných, open source systémoch rozpoznávania reči.
+data-other-tatoeba-description = Tatoeba je rozsiahla databáza viet, prekladov a hovoreného slova pre použitie pri štúdiu jazykov. Obsahuje hovorenú angličtinu nahranú jej komunitou.
+your-feedback = Máte nápady, ako vylepšiť dataset Common Voice? Dajte nám o nich vedieť na Discourse.
+go-discourse = Prejsť na Discourse
+missing-language = Nevidíte v datasete svoj jazyk? Ak chcete o jazyk požiadať, prejdite na stránku s jazykmi.
+go-languages-page = Prejsť na stránku s jazykmi
+ready-to-validate = Ste pripravení pomôcť s overovaním viet?
+more = Viac
+close = Zavrieť
+download = Prevziať
 
 ## Download Modal
 
@@ -306,7 +455,7 @@ contact-form-name =
     .label = Meno
 contact-form-message =
     .label = Správa
-contact-required = *vyžadované
+contact-required = * vyžadované pole
 
 ## Request Language Modal
 
@@ -315,21 +464,22 @@ request-language-form-language =
     .label = Jazyk
 request-language-success-title = Žiadosť o jazyk bola odoslaná. Ďakujeme.
 request-language-success-content = Čoskoro vám dáme vedieť, ako môžete pridať svoj jazyk do Common Voice.
+select-language = Vyberte si jazyk...
+other-language = Ostatné jazyky
 
 ## Languages Overview
 
 language-section-in-progress = Jazyky, ktoré sa pripravujú
-language-section-in-progress-description = Tieto jazyky momentálne naše komunity pripravujú na prispievanie. Ich pokrok zobrazuje, ako ďaleko sú s prekladom stránky a so zberom viet.
-language-section-launched = Spustené
-language-section-launched-description = Pre tieto jazyky bola preložená webová stránka a zozbierali sme dostatok viet. To umožní našim prispievateľom efektívne sa zapojiť.
+language-section-in-progress-new-description = Tieto jazyky sa momentálne pripravujú. Pri každom jazyku je uvedené, v akom stave je <localizationGlossaryLink>preklad stránky</localizationGlossaryLink> a <sentenceCollectionGlossaryLink>zber viet</sentenceCollectionGlossaryLink>.
+language-section-launched = Spustené jazyky
 languages-show-more = Zobraziť viac
 languages-show-less = Zobraziť menej
-language-speakers = Počet hovoriacich
+language-speakers = Počet prispievateľov
 language-meter-in-progress = Pokrok
 language-total-progress = Celkovo
 language-search-input =
     .placeholder = Hľadať
-language-speakers = Počet hovoriacich
+language-speakers = Počet prispievateľov
 localized = Preklad stránky
 sentences = Počet viet
 total-hours = Počet overených hodín
@@ -342,7 +492,7 @@ contribute = Zapojte sa
 listen = Počúvajte
 skip = Preskočiť
 shortcuts = Skratky
-clips = Klipy
+clips-with-count = <bold>{ $count }</bold> nahrávok
 goal-help-recording = Pomohli ste projektu Common Voice dosiahnuť <goalPercentage></goalPercentage> z nášho denného cieľa { $goalValue } nahrávok!
 goal-help-validation = Pomohli ste projektu Common Voice dosiahnuť <goalPercentage></goalPercentage> z nášho denného cieľa { $goalValue } kontrol!
 contribute-more =
@@ -352,6 +502,15 @@ contribute-more =
        *[other] Ste pripravení urobiť ešte { $count } ďalších?
     }
 record-cta = Začnite s nahrávaním
+record-platform-not-supported = Ospravedlňujeme sa, no vaša platforma zatiaľ nie je podporovaná.
+record-platform-not-supported-desktop = Na počítačoch si môžete prevziať najnovšie:
+record-platform-not-supported-ios = Používatelia <bold>iOS</bold> si môžu prevziať našu bezplatnú aplikáciu:
+record-must-allow-microphone = Musíte povoliť prístup ku mikrofónu.
+record-no-mic-found = Nenašiel sa žiadny mikrofón.
+record-error-too-short = Vaša nahrávka bola príliš krátka.
+record-error-too-long = Vaša nahrávka bola príliš dlhá.
+record-error-too-quiet = Vaša nahrávka bola príliš tichá.
+record-cancel = Zrušiť opakovaný záznam
 record-instruction = { $actionType } na <recordIcon></recordIcon> a prečítajte vetu nahlas
 record-stop-instruction = { $actionType } na <stopIcon></stopIcon> keď budete hotoví
 record-three-more-instruction = Ešte tri!
@@ -375,3 +534,41 @@ listen-last-time-instruction = <playIcon></playIcon> Posledná nahrávka!
 nothing-to-validate = Pre váš jazyk nemáme čo overiť. Pomôžte nám to zmeniť.
 record-button-label = Nahrajte svoj hlas
 share-title-new = <bold>Pomôžte nám</bold> nájsť ďalšie hlasy
+
+## Goals
+
+days =
+    { $count ->
+        [one] deň
+        [few] dni
+       *[other] dní
+    }
+recordings =
+    { $count ->
+        [one] nahrávka
+        [few] nahrávky
+       *[other] nahrávok
+    }
+validations =
+    { $count ->
+        [one] overenie
+        [few] overenia
+       *[other] overení
+    }
+
+## Dashboard
+
+your-languages = Vaše jazyky
+stats = Štatistiky
+you = Vy
+everyone = Všetci
+contribution-activity = Aktivita prispievateľov
+top-contributors = Najlepší prispievatelia
+overall-accuracy = Celková presnosť
+
+## Profile Delete
+
+delete-q = Chcete tiež požiadať o vymazanie vašich hlasových nahrávok, alebo ich chcete ponechať v datasete Common Voice?
+keep = Ponechať
+remove = Odstrániť
+profile-form-delete = Odstrániť profil

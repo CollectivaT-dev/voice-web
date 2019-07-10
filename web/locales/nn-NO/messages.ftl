@@ -8,6 +8,9 @@ email-input =
     .label = E-post
 submit-form-action = Send inn
 loading = Lastar…
+email-opt-in-privacy = Ved å vejle å ta i mot e-post seier du deg samd i at Mozilla kan handtere denne informasjonen slik det er skildra i <privacyLink>personvernfråsegna<privacyLink> til Mozilla.
+indicates-required = * Viser påkravd felt
+not-available-abbreviation = Ikkje tilgjengeleg
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -15,15 +18,23 @@ loading = Lastar…
 
 ## Languages
 
+ab = Abkhasisk
+ace = Atsenesisk
+ady = Adygeisk
+af = Afrikaans
+am = Amharisk
 an = Aragonesisk
 ar = Arabisk
 as = Assamesisk
 ast = Asturiansk
 az = Aserbajdsjansk
+ba = Basjkirisk
+bg = Bulgarsk
 bn = Bengali
 br = Bretonsk
 bxr = Burjatisk
 ca = Katalansk
+cak = Kakchikel
 cnh = Hakha Chin
 cs = Tsjekkisk
 cv = Tsjuvasjisk
@@ -31,42 +42,66 @@ cy = Walisisk
 da = Dansk
 de = Tysk
 dsb = Nedersorbisk
+dv = Dhivehi
 el = Gresk
 en = Engelsk
+eo = Esperanto
 es = Spansk
 et = Estisk
+eu = Baskisk
+fa = Persisk
+ff = Fula
 fi = Finsk
 fo = Færøysk
 fr = Fransk
 fy-NL = frisisk
 ga-IE = Irsk
+gl = Galisisk
+ha = Hausa
 he = Hebraisk
+hi-IN = Hindi
+hr = Kroatisk
 hsb = Oversorbisk
 hu = Ungarsk
 ia = Interlingua
 id = Indonesisk
 is = Islandsk
 it = Italiensk
+izh = Ingrisk
 ja = Japansk
 ka = Georgisk
 kab = Kabylsk
 kk = Kasakhisk
 ko = Koreansk
 kpv = Komi (syriansk)
+ku = Kurdisk
 kw = Kornisk
 ky = Kirgisk
+lij = Ligurisk
+lt = Litauisk
+lv = Latvisk
+mdf = Moksja
+mhr = Austmarisk
 mk = Makedonsk
+ml = Malayalam
+mn = Mongolsk
+mrj = Vestmarisk
 myv = Erziamordvinsk
 nb-NO = Norsk bokmål
 ne-NP = Nepalsk
 nl = Nederlandsk
 nn-NO = Norsk nynorsk
+oc = Oksitansk
 or = Oriya
 pl = Polsk
 pt-BR = Portugisisk (Brazil)
+rm-sursilv = Retoromansk surselva
 ro = Rumensk
 ru = Russisk
+rw = Kinyarwanda
 sah = Sakha
+sc = Sardinsk
+si = Singalesisk
 sk = Slovakisk
 sl = Slovensk
 sq = Albansk
@@ -74,11 +109,17 @@ sr = Serbisk
 sv-SE = Svensk
 ta = Tamilsk
 te = Telugu
+tg = Tadsjikisk
 th = Thai
 tr = Tyrkisk
 tt = Tatarisk
+uby = Ubykhisk
+udm = Udmurtisk
 uk = Ukrainsk
+ur = Urdu
 uz = Usbekisk
+vi = Vietnamesisk
+vot = Votisk
 zh-CN = Kinesisk (Kina)
 zh-HK = Kinesisk (Hong Kong)
 zh-TW = Kinesisk (Taiwan)
@@ -92,6 +133,7 @@ speak = Snakk
 speak-now = Snakk no
 datasets = Datamengder
 languages = Språk
+about = Om oss
 profile = Profil
 help = Hjelp
 contact = Kontakt
@@ -104,8 +146,7 @@ share-title = Hjelp oss med å finne andre som vil donere stemma si!
 share-text = Hjelp til med å lære maskiner korleis folk snakkar, doner stemma di på { $link }
 link-copied = Lenke kopiert
 back-top = Tilbake til toppen av sida
-contribution-banner-button = Ta ein titt
-report-bugs-link = Hjelp oss med å rapportere feil
+logout = Logg ut
 
 ## Home Page
 
@@ -121,6 +162,56 @@ no-clips-to-validate = Det verkar ikkje som om det finst klipp å høyre på for
 vote-yes = Ja
 vote-no = Nei
 toggle-play-tooltip = Trykk på { shortcut-play-toggle } for å starte eller stoppe innspelinga
+speak-subtitle = Doner stemma di
+speak-goal-text = Innspelte klipp
+listen-subtitle = Hjelp oss med å validere stemmene
+listen-goal-text = Validerte klipp
+hours-recorded = Innspelte timar
+hours-validated = Validerte timar
+voices-online = Stemmer på nettet no
+todays-progress = Framdrift i dag
+help-reach-goal = Hjelp oss å nå { $goal }
+read-terms-q = Har du lese vilkåra våre?
+ready-to-record = Klar for å donere stemma di til oss?
+all-locales = Allle
+today = I dag
+x-weeks-short =
+    { $count ->
+        [one] veke
+       *[other] { $count } veker
+    }
+x-months-short =
+    { $count ->
+        [one] mnd
+       *[other] { $count }mndr
+    }
+x-years-short =
+    { $count ->
+        [one] år
+       *[other] { $count } år
+    }
+help-make-dataset = Hjelp oss å byggje eit offentleg, ope datasett med høg kvalitet
+profile-not-required = Du treng ikkje ein konto for å bidra, men det hjelper. Sjå kvifor nedanfor.
+sign-up-account = Be om konto
+email-subscription-title = registrer deg for oppdateringar via e-post
+
+## Account Benefits
+
+benefits = Føremoner
+rich-data = Gjer dataa dine så rike som mogleg ved å gje oss litt anonyme, demografiske data. Vi anonymiserer alle demografiske data før dei vert offentlege.
+improve-audio = Profilinformasjon forbetrar lyddata som blir nytta til å trene nøyaktigheita til talegjenkjenninga.
+keep-track = Følg framdrifta di på tvers av mange språk.
+compare-progress = Sjå korleis framdrifta di er jamført med andre bidragsytarar frå heile verda.
+view-goals = Sjå framdrifta di i høve til personlege mål og prosjektmål.
+join-newsletter = Du kan sjølvvalt melde deg på e-postlista for oppdateringar og nyhende om prosjektet.
+
+## What's public
+
+whats-public = Kva er offentleg?
+email-not-public = Vi gjer ikkje e-postadressa di offentleg.
+recordings-and-locale-public = Talet på innspelingar og kva for språk du bidreg til er offentleg.
+username-optin-public = Du kan velje å gjere brukarnamnet ditt offentleg eller anonymt.
+demographic-deidentified = Sjølvvalde innsende demografiske data (t.d. alder, kjønn, språk, dialekt) blir fjerna frå innsende stemmedata og vil aldri bli gjort offentleg i profilen din.
 
 ## Speak & Listen Shortcuts
 
@@ -146,6 +237,8 @@ shortcut-vote-no = n
 # Must be different from { shortcut-skip }, { shortcut-vote-yes } and { shortcut-vote-no }
 shortcut-record-toggle = e
 shortcut-record-toggle-label = Spel inn/Stopp
+shortcut-rerecord-toggle = [1-5]
+shortcut-rerecord-toggle-label = Spel inn klippet ein gong til
 request-language-text = Ser du ikkje språket ditt på Common Voice enno?
 request-language-button = Send ein førespurnad om eit nytt språk
 
@@ -165,62 +258,107 @@ english = Engelsk
 
 ## ProfileForm
 
-profile-form-cancel = Avslutt skjema
-profile-form-delete = Slett profilen
 profile-form-username =
     .label = Brukarnamn
-profile-form-language =
-    .label = Språk
+profile-form-native-language =
+    .label = Morsmål
+profile-form-additional-language =
+    .label = Ytterlegare språk
 profile-form-accent =
     .label = Dialekt
 profile-form-age =
     .label = Alder
 profile-form-gender =
     .label = KJønn
+leaderboard-visibility =
+    .label = Synlegheit på toppliste
+hidden = Usynleg
+visible = Synleg
+native-language =
+    .label = Morsmål
 profile-form-submit-save = Lagre
 profile-form-submit-saved = Lagra
-profile-keep-data = Behald data
-profile-delete-data = Slett data
 male = Mann
 female = Kvinne
 # Gender
 other = Anna
 why-profile-title = Kvifor ein profil?
 why-profile-text = Ved å gje nokre opplysingar om deg sjølv, vil dei lyddata, du sender inn til Common Voice verte meir nyttige for talegjenkjennings-systema som brukar desse dataa til å forbetre nøyaktigheita si.
+dashboard = Oversyn
+build-profile = Bygg profil
+avatar = Avatar
+goals = Mål
+settings = Innstillingar
 edit-profile = Rediger profil
-profile-create = Opprett ein profil
 profile-create-success = Profil oppretta
 profile-close = Lat att
-profile-clear-modal = Sletting av dine profildata tyder at denne demografiske informasjonen ikkje lenger vil sendast til Common Voice saman med innspelingane dine.
 profile-explanation = Hald auge med framdrifta di med ein profil som òg gjer stemmedataa våre meir korrekte.
+thanks-for-account = Takk for at du stadfesta kontoen din, no byggjer vi profilen din.
+why-demographic = Kvifor er dette viktig?
+login-identity = Innloggingsidentitet
+login-signup = Logg inn/Meld deg på
+edit = Rediger
+email-subscriptions = E-postabonnement
+download-profile = Last ned mine data
+contribution-experience = Bidragserfaring
+off = Av
+on = På
+add-avatar-title = Legg til ein avatar  i profilen din
+browse-file-title = Last opp ei bildefil
+browse-file = Dra og slepp, eller <browseWrap>bla</browseWrap>
+connect-gravatar = Kople til med Gravatar
+gravatar_not_found = Fann ingen gravatar for e-postadressa di
+file_too_large = Den valde fila er for stor
+manage-subscriptions = Handter abonnement
+manage-email-subscriptions = Handter e-postabonnement
+email-already-used = E-postadressa vert allereie brukt med ein annan konto
+add-language = Legg til språk
+change-email-setings = Endre e-postkontoen din via Innstillingar under Innloggingsidentitet
 
 ## FAQ
 
 faq-title = Vanlege spørsmål og svar
-faq-what-q = Kva er Common Voice?
-faq-what-a = Stemmeggjenkjennings-teknologi kan revolusjonere måten vi kommuniserer med maskiner på. Men systema som finst tilgjengelege no er dyre og privateigde. Common Voice er eit projekt som skal gjere stemmegjenkjenningsteknologi tilgjengeleg for alle. Folk bidreg med stemmene sine til ein stor database, som raskt og enkelt vil la alle kunne trene stemmeaktiverande appar. Alle stemmedataa vil vere tilgjengelege for utviklarar.
-faq-important-q = Kvifor er det viktig?
-faq-important-a = Språk er naturleg, språk er menneskeleg. Det er den enklaste og meste naturlege måten å kommunisere på. Vi vil at utviklarar skal kunne byggje fantastiske ting frå realtid-omsettarar til stemmeaktiverte administrative assistentar. Men akkurat no finst det ikkje tilstrekkeleg med generelt tilgjengelege data for å byggje slike appar. Vi håper at Common Voice kjem å gje utviklarar det dei treng for slik nyskaping.
-faq-get-q = Korleis får eg tilgang til Common Voice data?
-faq-get-a = Datamengda er no tilgjengeleg på <downloadLink>nedastingssida</downloadLink> vår under lisensen <licensLink>CC-0</ licenseLink>.
-faq-mission-q = Kvifor er Common Voice ein del av oppdraget til Mozilla?
-faq-mission-a = Mozilla er dedikert til å halde nettet ope og tilgjengeleg for alle. For å gjere det er vi nøydde til å gje fullmakt til kreative personar gjennom prosjekt som Common Voice. Ettersom stemmeteknologiar ikkje lenger kun vert brukt i nisje-applikasjonar, meiner vi at dei skal tene alle brukarar like godt. Vi ser eit behov for å ta med fleire språk, aksentar og demografiar, når stemmeteknologiar vert skapte og testa. Mozilla ønskjer eit sunt og levande internett. Det betyr at nye skaparar får tiltgang til stemmedata slik at dei kan byggje nye, ekstraordinære prosjekt. Common Voice vert ein offentleg ressurs, som vil kome til å hjelpe både Mozilla og utviklarar over heile verda.
-faq-native-q = { $lang } er ikkje morsmålet mitt og eg pratar med aksent. Er de framleis interesserte i stemmeinnspelingane mine?
-faq-native-a = Ja, vi vil svært gjerne ha di hjelp! Ein del av målet med Common Voice er å samle inn så mange ulike aksentar som råd, slik at datamaskiner lettare kan forstå <bold>alle</ bold> når dei snakkar.
-faq-firefox-q = Vil tale-til-tekst via Common Voice nokongong bli ein del av Firefox?
-faq-firefox-a = Common Voice har ubegrensa potensial og vi undersøkjer talegrensesnitt i mange Mozilla-produkt, inklusive Firefox.
-faq-quality-q = Kva for kvalitetsnivå krevst det på lyden for at han skal kunne brukast?
-faq-quality-a = Vi vil gjerne at lydkvaliteten avspeglar og kan konkurrere med andre tale-til-tekst applikasjonar på marknaden. Derfor har vi bruk for variasjon. Dette lærer tale-til-tekst applikasjonen å handtere ulike situasjonar — bakgrunnsstøy, bilstøy, viftestøy — utan feil.
-faq-hours-q = Kvifor er målet å ha 10 000 timar med lydopptak?
-faq-hours-a = Dette er omlag talet på timar som krevst for å trene opp eit velfungerande stemmegjenkjenningssystem (STT).
-faq-source-q = Kvar kjem kjeldeteksten frå?
-faq-source-a1 = Dei gjeldande setningane kjem no frå bidragsytarar samt frå dialogar frå filmar som er i «offentleg domene» som til dømes filmen <italic>It’s a Wonderful Life.</italic>
-faq-source-a2 = Du kan sjå kjeldetekstane våre i <dataLink>denne mappa på GitHub</dataLink>.
+faq-what-cv-q = Kva er Common Voice?
+faq-why-important-q = Kvifor er det viktig?
+faq-how-get-q = Korleis kan eg få tak i Common Voice-data?
+faq-why-mission-q = Kvifor er Common Voice ein del av Mozillas oppdrag?
+faq-why-my-lang-q = Kvifor er ikkje språket mitt inkludert enno?
+faq-how-calc-hours-q = Korleis bereknar Common Voice timar?
+faq-where-src-from-2-q = Kvar kjem denne kjeldeteksten frå?
+faq-why-account-q = Kvifor skal eg registrere meg med ein konto?
+faq-is-account-public-q = Er kontoinformasjonen min offentleg?
+faq-what-is-cv = Kva er Common Voice?
+faq-using-cv = Bruke Common Voice
+faq-search-for-answers =
+    .label = Søk etter svar
 
-## Profile
+## ABOUT US
 
-profile-why-title = Kvifor profil?
-profile-why-content = Ved å gje nokre opplysingar om deg sjølv vil lyddata du sender inn til Common Voice vere nyttigare for talegjenkjennings-systema, som skal bruka desse data til å forbetra nøyaktigheita.
+about-title = Kvifor Common Voice?
+how-does-it-work-title = Korleis fungerer det?
+about-speak = Tal
+about-listen-queue = Lyttekø
+about-listen = Lytt
+about-is-it-valid = Er klippet gyldig?
+about-yes-votes = ≥ 2 Ja-røyster
+about-no-votes = ≥ 2 Nej-røyster
+about-clip-graveyard = Klippkyrkjegard
+about-partners = Partnarar
+about-become-a-partner = Bli ein partnar
+about-get-involved = Ver med
+about-nav-why-common-voice = Kvifor ?
+about-nav-how-it-works = Korleis ?
+about-nav-partners = Partnarar
+about-nav-get-involved = Ver med
+mycroft-title = Mycroft Ai
+mycroft-subtitle = Kunstig intelligens
+
+## Glossary
+
+glossary = Ordliste
+localization = Lokalisering
+sst = Tale-til-tekst (STT)
+de-identified = Anonymisering
 
 ## NotFound
 
@@ -240,41 +378,56 @@ data-get-started = <speechBlogLink>Kom i gang med talegjenkjenning</speechBlogLi
 data-other-title = Andre stemmedatamengder…
 data-other-goto = Gå til { $name }
 data-other-download = Last ned data
-data-other-librispeech-description = LibriSpeech er eit korpus av omlag 1000 timar med engelsk tale (16Khz-opptak) henta frå lydbøker i LibriVox-prosjektet.
-data-other-ted-name = TED-LIUM korpus
-data-other-ted-description = TED-LIUM korpuset er laga på bakgrunn av lydsamtalar og transkripsjonar av desse, på TED-nettsida.
-data-other-voxforge-description = VoxForge vart starta for å samla inn transskriberet tale for bruk i talegjenkjenningssystem basert på fri og open kjeldekode.
-data-other-tatoeba-description = Tatoeba er ein stor database av setningar, omsettingar og innspelt lyd for bruk i språklæring. Denne filhentninga inneheld talt engelsk spelt inn av fellesskapet på Tatoeba.
 data-bundle-button = Last ned Datamengde-pakken
 data-bundle-description = Data frå Common Voice pluss alle andre stemmedatamengder ovanfor.
 license = Lisens: <licenseLink>{ $license }</licenseLink>
 license-mixed = Blanda
-
-## Record Page
-
-record-platform-not-supported = Vi beklagar, men plattforma di er for tida ikkje støtta.
-record-platform-not-supported-desktop = Til datamaskiner kan du laste ned siste versjon:
-record-platform-not-supported-ios = <bold>iOS</bold>-brukarar kan laste ned gratisappen vår:
-record-must-allow-microphone = Du må tillate tilgang til mikrofonen.
-record-retry = Prøv igjen
-record-no-mic-found = Fann ingen mikrofon.
-record-error-too-short = Innspelinga var for kort.
-record-error-too-long = Innspelinga var for lang.
-record-error-too-quiet = Innspelinga var for stille.
-record-submit-success = Sendt inn! Vil du spele inn meir?
-record-help = Trykk for å spele inn, les deretter setninga ovanfor høgt.
-record-cancel = Avbryt nyinnspelinga
 review-terms = Ved å bruke Common Voice, godkjenner du <termsLink>vilkåra</termsLink> og <privacyLink>personvernpraksisen</privacyLink> vår
 terms-agree = Eg er samd
 terms-disagree = Eg er ikkje samd
-review-aborted = Opplasting avbroten. Vil du slette innspelingane dine? 
+review-aborted = Opplasting avbroten. Vil du slette innspelingane dine?
 review-submit-title = Vurder og send inn
-review-submit-msg = Takk for innspelinga! <lineBreak></lineBreak>Vurder og send inn klippa dine nedanfor. 
+review-submit-msg = Takk for innspelinga! <lineBreak></lineBreak>Vurder og send inn klippa dine nedanfor.
 review-recording = Vurder
 review-rerecord = Spel inn på nytt
 review-cancel = Avbryt innsending
 review-keep-recordings = Behald opptaka
 review-delete-recordings = Slett opptaka mine
+
+## Datasets Page
+
+language = Språk
+# File size in gigabytes
+size = Storleik
+validated-hr-total = Totalt validerte timar
+overall-hr-total = Totalt tal på timar
+cv-license = Lisens
+audio-format = Lydformat
+number-of-voices = Tal på stemmer
+splits = Oppdeling
+email-to-download = Skriv inn ei e-postadresse for å laste ned
+confirm-size = Du er klar for å starte ei nedlasting av <b>{ $size }</b>
+size-gigabyte = GB
+size-megabyte = MB
+download-language = Last ned { $language }
+validated-hours = Validerte timar
+recorded-hours = Innspelte timar
+whats-inside = Kva finst i Common Voice-datamengda?
+subscribe = Abonner
+get-started-speech = Kom i gang med talegjenkjenning
+other-datasets = Andre stemmedatamengder
+feedback-q = Har du ei tilbakemelding?
+data-other-librispeech-description = LibriSpeech er eit korpus av omlag 1000 timar med engelsk tale (16Khz-opptak) henta frå lydbøker i LibriVox-prosjektet.
+data-other-ted-name = TED-LIUM korpus
+data-other-ted-description = TED-LIUM korpuset er laga på bakgrunn av lydsamtalar og transkripsjonar av desse, på TED-nettsida.
+data-other-voxforge-description = VoxForge vart starta for å samla inn transskriberet tale for bruk i talegjenkjenningssystem basert på fri og open kjeldekode.
+data-other-tatoeba-description = Tatoeba er ein stor database av setningar, omsettingar og innspelt lyd for bruk i språklæring. Denne filhentninga inneheld talt engelsk spelt inn av fellesskapet på Tatoeba.
+go-discourse = Gå til Discourse
+go-languages-page = Gå til språksida
+ready-to-validate = Er du klar for å hjelpe til med å validere setningar?
+more = Meir
+close = Lat att
+download = Last ned
 
 ## Download Modal
 
@@ -302,13 +455,13 @@ request-language-form-language =
     .label = Språk
 request-language-success-title = Språkførespurnaden er sendt inn. Takk skal du ha.
 request-language-success-content = Vi kontaktar deg snart med meir informasjon om korleis du legg til ditt språk i Common Voice.
+select-language = Vel eit språk…
+other-language = Anna språk
 
 ## Languages Overview
 
 language-section-in-progress = Under arbeid
-language-section-in-progress-description = Pågåande språk vert laga frå bidrag av fellesskapen vår. Framdrifta speglar kvar dei er i omsettinga av netsida og innhenting av setningar.
 language-section-launched = Lansert
-language-section-launched-description = For desse lanserte språka er nettsida fullstendig omsett i tillegg til at dei har nok setningar for pågåande samarbeid gjennom <italic>{ speak }</italic> og <italic>{ listen }</italic>.
 languages-show-more = Vis meir
 languages-show-less = Vis mindre
 language-speakers = Talt av
@@ -317,7 +470,9 @@ language-total-progress = Totalt
 language-search-input =
     .placeholder = Søk
 language-speakers = Talt av
+localized = Omsett
 sentences = Setningar
+total-hours = Validerte timar
 
 ## New Contribution
 
@@ -327,13 +482,22 @@ contribute = Bidra
 listen = Lytt
 skip = Hopp over
 shortcuts = Snarvegar
-clips = Klipp
+clips-with-count = <bold>{ $count }</bold> klipp
 contribute-more =
     { $count ->
         [one] Klar for { $count } til?
        *[other] Klar for { $count } til?
     }
 record-cta = Start innspeling
+record-platform-not-supported = Vi beklagar, men plattforma di er for tida ikkje støtta.
+record-platform-not-supported-desktop = Til datamaskiner kan du laste ned siste versjon:
+record-platform-not-supported-ios = <bold>iOS</bold>-brukarar kan laste ned gratisappen vår:
+record-must-allow-microphone = Du må tillate tilgang til mikrofonen.
+record-no-mic-found = Fann ingen mikrofon.
+record-error-too-short = Innspelinga var for kort.
+record-error-too-long = Innspelinga var for lang.
+record-error-too-quiet = Innspelinga var for stille.
+record-cancel = Avbryt nyinnspelinga
 record-instruction = { $actionType } <recordIcon></recordIcon> og so les setninga høgt
 record-stop-instruction = { $actionType }<stopIcon></stopIcon> når du er ferdig
 record-three-more-instruction = Tre att!
@@ -341,7 +505,6 @@ record-again-instruction = Bra!<recordIcon></recordIcon> Spel inn det neste klip
 record-again-instruction2 = Fortset slik og spel inn ein gong til <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Den siste!
 review-tooltip = Her kan du vurdere og spele inn klipp på nytt
-unable-speak = Kan du ikkje snakke inn no?
 review-instruction = Vurder og spel inn klipp på nytt om det trengst
 record-submit-tooltip = { $actionType } send inn når du er klar
 clips-uploaded = Klipp opplasta
@@ -357,3 +520,60 @@ listen-last-time-instruction = <playIcon></playIcon>Det siste!
 nothing-to-validate = Vi har ikkje noko å validere på dette språket. Hjelp oss med å fylle opp køen.
 record-button-label = Spel inn stemma di
 share-title-new = <bold>Hjelp oss</bold> med å finne fleire stemmer
+
+## Reporting
+
+report = Rapporter
+report-title = Send inn ein rapport
+report-wrong-language = Feil språk
+report-other-comment =
+    .placeholder = Kommentar
+continue = Fortset
+
+## Goals
+
+streaks = Tal på dagar i strekk
+days =
+    { $count ->
+        [one] Dag
+       *[other] Dagar
+    }
+recordings =
+    { $count ->
+        [one] Innspeling
+       *[other] Innspelingar
+    }
+validations =
+    { $count ->
+        [one] Validering
+       *[other] Valideringar
+    }
+
+## Dashboard
+
+your-languages = Språka dine
+toward-next-goal = Mot neste mål
+clips-you-recorded = Klipp du har spelt inn
+clips-you-validated = Klipp du har validert
+stats = Statistikk
+you = Du
+everyone = Alle
+contribution-activity = Bidragsaktivitet
+top-contributors = Toppbidragsytarar
+recorded-clips = Innspelte klipp
+validated-clips = Validerte klipp
+total-approved = Godkjende i alt
+overall-accuracy = Nøyaktigheit jamt over
+
+## Profile Delete
+
+keep = Behald
+remove = Fjern
+profile-form-delete = Slett profilen
+
+## Landing
+
+welcome-staff = Velkomne tilsette på { $company }!
+login-company = Logg inn/Registrer deg med { $company } e-post
+profile-not-required = Du treng ikkje ein konto for å bidra, men det hjelper. Sjå kvifor nedanfor.
+read-more-about = Les meir på Om oss-sida vår
